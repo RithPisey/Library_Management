@@ -13,9 +13,9 @@ C:\Users\Pisey\Desktop\Library_Management\Library_Management\obj\Debug\net5.0-wi
 C:\Users\Pisey\Desktop\Library_Management\Library_Management\obj\Debug\net5.0-windows\Library_Management.AssemblyInfo.cs
 C:\Users\Pisey\Desktop\Library_Management\Library_Management\obj\Debug\net5.0-windows\Library_Management.csproj.CoreCompileInputs.cache
 C:\Users\Pisey\Desktop\Library_Management\Library_Management\obj\Debug\net5.0-windows\Library_Management.dll
-C:\Users\Pisey\Desktop\Library_Management\Library_Management\obj\Debug\net5.0-windows\refint\Library_Management.dll
 C:\Users\Pisey\Desktop\Library_Management\Library_Management\obj\Debug\net5.0-windows\Library_Management.pdb
 C:\Users\Pisey\Desktop\Library_Management\Library_Management\obj\Debug\net5.0-windows\Library_Management.genruntimeconfig.cache
 C:\Users\Pisey\Desktop\Library_Management\Library_Management\obj\Debug\net5.0-windows\ref\Library_Management.dll
 C:\Users\Pisey\Desktop\Library_Management\Library_Management\bin\Debug\net5.0-windows\Image\01.jpg
 C:\Users\Pisey\Desktop\Library_Management\Library_Management\obj\Debug\net5.0-windows\Library_Management.Properties.Resources.resources
+C:\Users\Pisey\Desktop\Library_Management\Library_Management\bin\Debug\net5.0-windows\ref\Library_Management.dll

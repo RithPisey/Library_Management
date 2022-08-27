@@ -21,5 +21,10 @@ namespace Library_Management
         {
 
         }
+
+        private void Librarian_DGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

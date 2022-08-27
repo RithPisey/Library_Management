@@ -19,3 +19,24 @@ C:\Users\Pisey\Desktop\Library_Management\Library_Management\obj\Debug\net5.0-wi
 C:\Users\Pisey\Desktop\Library_Management\Library_Management\bin\Debug\net5.0-windows\Image\01.jpg
 C:\Users\Pisey\Desktop\Library_Management\Library_Management\obj\Debug\net5.0-windows\Library_Management.Properties.Resources.resources
 C:\Users\Pisey\Desktop\Library_Management\Library_Management\bin\Debug\net5.0-windows\ref\Library_Management.dll
+C:\Users\Heng Pisey\Desktop\Library_Management-main\Library_Management\bin\Debug\net5.0-windows\Image\01.jpg
+C:\Users\Heng Pisey\Desktop\Library_Management-main\Library_Management\bin\Debug\net5.0-windows\Library_Management.exe
+C:\Users\Heng Pisey\Desktop\Library_Management-main\Library_Management\bin\Debug\net5.0-windows\Library_Management.deps.json
+C:\Users\Heng Pisey\Desktop\Library_Management-main\Library_Management\bin\Debug\net5.0-windows\Library_Management.runtimeconfig.json
+C:\Users\Heng Pisey\Desktop\Library_Management-main\Library_Management\bin\Debug\net5.0-windows\Library_Management.runtimeconfig.dev.json
+C:\Users\Heng Pisey\Desktop\Library_Management-main\Library_Management\bin\Debug\net5.0-windows\Library_Management.dll
+C:\Users\Heng Pisey\Desktop\Library_Management-main\Library_Management\bin\Debug\net5.0-windows\Library_Management.pdb
+C:\Users\Heng Pisey\Desktop\Library_Management-main\Library_Management\obj\Debug\net5.0-windows\Library_Management.csproj.AssemblyReference.cache
+C:\Users\Heng Pisey\Desktop\Library_Management-main\Library_Management\obj\Debug\net5.0-windows\Library_Management.Login.resources
+C:\Users\Heng Pisey\Desktop\Library_Management-main\Library_Management\obj\Debug\net5.0-windows\Library_Management.MainForm.resources
+C:\Users\Heng Pisey\Desktop\Library_Management-main\Library_Management\obj\Debug\net5.0-windows\Library_Management.Properties.Resources.resources
+C:\Users\Heng Pisey\Desktop\Library_Management-main\Library_Management\obj\Debug\net5.0-windows\Library_Management.csproj.GenerateResource.cache
+C:\Users\Heng Pisey\Desktop\Library_Management-main\Library_Management\obj\Debug\net5.0-windows\Library_Management.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Heng Pisey\Desktop\Library_Management-main\Library_Management\obj\Debug\net5.0-windows\Library_Management.AssemblyInfoInputs.cache
+C:\Users\Heng Pisey\Desktop\Library_Management-main\Library_Management\obj\Debug\net5.0-windows\Library_Management.AssemblyInfo.cs
+C:\Users\Heng Pisey\Desktop\Library_Management-main\Library_Management\obj\Debug\net5.0-windows\Library_Management.csproj.CoreCompileInputs.cache
+C:\Users\Heng Pisey\Desktop\Library_Management-main\Library_Management\obj\Debug\net5.0-windows\Library_Management.dll
+C:\Users\Heng Pisey\Desktop\Library_Management-main\Library_Management\obj\Debug\net5.0-windows\refint\Library_Management.dll
+C:\Users\Heng Pisey\Desktop\Library_Management-main\Library_Management\obj\Debug\net5.0-windows\Library_Management.pdb
+C:\Users\Heng Pisey\Desktop\Library_Management-main\Library_Management\obj\Debug\net5.0-windows\Library_Management.genruntimeconfig.cache
+C:\Users\Heng Pisey\Desktop\Library_Management-main\Library_Management\obj\Debug\net5.0-windows\ref\Library_Management.dll

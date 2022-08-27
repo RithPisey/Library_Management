@@ -1,27 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pisey\\Desktop\\Library_Management\\Library_Management\\Library_Management.csproj": {}
+    "C:\\Users\\Heng Pisey\\Desktop\\Library_Mag\\Library_Management\\Library_Management\\Library_Management.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pisey\\Desktop\\Library_Management\\Library_Management\\Library_Management.csproj": {
+    "C:\\Users\\Heng Pisey\\Desktop\\Library_Mag\\Library_Management\\Library_Management\\Library_Management.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pisey\\Desktop\\Library_Management\\Library_Management\\Library_Management.csproj",
+        "projectUniqueName": "C:\\Users\\Heng Pisey\\Desktop\\Library_Mag\\Library_Management\\Library_Management\\Library_Management.csproj",
         "projectName": "Library_Management",
-        "projectPath": "C:\\Users\\Pisey\\Desktop\\Library_Management\\Library_Management\\Library_Management.csproj",
-        "packagesPath": "C:\\Users\\Pisey\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pisey\\Desktop\\Library_Management\\Library_Management\\obj\\",
+        "projectPath": "C:\\Users\\Heng Pisey\\Desktop\\Library_Mag\\Library_Management\\Library_Management\\Library_Management.csproj",
+        "packagesPath": "C:\\Users\\Heng Pisey\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Heng Pisey\\Desktop\\Library_Mag\\Library_Management\\Library_Management\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Pisey\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Heng Pisey\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0-windows7.0"
@@ -63,7 +57,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

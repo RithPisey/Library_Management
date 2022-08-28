@@ -72,7 +72,7 @@
             this.Description_RTxtBox = new System.Windows.Forms.RichTextBox();
             this.Librarian_Lb = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.ClearBorrower_Btn = new System.Windows.Forms.Button();
             this.Duration_TxtBox = new System.Windows.Forms.ComboBox();
             this.BorrowDate_DPIcker = new System.Windows.Forms.DateTimePicker();
             this.ReturnDate_DPicker = new System.Windows.Forms.DateTimePicker();
@@ -83,7 +83,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.IdCardBorr_txtBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.AddBorrower_Btn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.SearchBorr_Btn = new System.Windows.Forms.Button();
             this.SearchBorr_TxtBox = new System.Windows.Forms.TextBox();
@@ -97,7 +97,7 @@
             this.Page_TxtBox = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.BookDesc_RTxtBox = new System.Windows.Forms.RichTextBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.ClearBook_Btn = new System.Windows.Forms.Button();
             this.Publish_DPicker = new System.Windows.Forms.DateTimePicker();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -106,7 +106,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.BookCode_TxtBox = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.AddBook_Btn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.SearchBook_Btn = new System.Windows.Forms.Button();
             this.SearchBook_TxtBox = new System.Windows.Forms.TextBox();
@@ -130,7 +130,39 @@
             this.Librarian_DGrid = new System.Windows.Forms.DataGridView();
             this.User_MagTab = new System.Windows.Forms.TabPage();
             this.UserManag_Grid = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.RoleLogin_Cbox = new System.Windows.Forms.ComboBox();
+            this.PasswordLog_TxtBox = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.StatusTxtBox_Btn = new System.Windows.Forms.TextBox();
+            this.ClearLogFrm_Btn = new System.Windows.Forms.Button();
+            this.BlockUserLog_Btn = new System.Windows.Forms.Button();
+            this.AddUserLog_Btn = new System.Windows.Forms.Button();
+            this.UsernameLog_TxtBox = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.SetLibrarianID_TxtBox = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.ClearLIbrarain_Btn = new System.Windows.Forms.Button();
+            this.BlockLIbrarain_Btn = new System.Windows.Forms.Button();
+            this.AddLibrarian_Btn = new System.Windows.Forms.Button();
+            this.AddLiGender_TxtBox = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.AddLiDiscription_TxtBox = new System.Windows.Forms.RichTextBox();
+            this.AddLiDoB_DPicker = new System.Windows.Forms.DateTimePicker();
+            this.label28 = new System.Windows.Forms.Label();
+            this.AddLIbrarian_TxtBox = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.UserManag_DGrid = new System.Windows.Forms.DataGridView();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.UserMngFilter_Cbox = new System.Windows.Forms.ComboBox();
+            this.UserMngSearch_Btn = new System.Windows.Forms.Button();
+            this.UserMng_TxtBox = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.UCheckIn_DGrid.SuspendLayout();
@@ -160,7 +192,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.Librarian_DGrid)).BeginInit();
             this.User_MagTab.SuspendLayout();
             this.UserManag_Grid.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserManag_DGrid)).BeginInit();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.SuspendLayout();
             // 
@@ -466,7 +502,7 @@
             this.groupBox2.Controls.Add(this.Description_RTxtBox);
             this.groupBox2.Controls.Add(this.Librarian_Lb);
             this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.ClearBorrower_Btn);
             this.groupBox2.Controls.Add(this.Duration_TxtBox);
             this.groupBox2.Controls.Add(this.BorrowDate_DPIcker);
             this.groupBox2.Controls.Add(this.ReturnDate_DPicker);
@@ -477,7 +513,7 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.IdCardBorr_txtBox);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.AddBorrower_Btn);
             this.groupBox2.Location = new System.Drawing.Point(3, 193);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(428, 382);
@@ -520,14 +556,14 @@
             this.label13.TabIndex = 29;
             this.label13.Text = "LIbrarian";
             // 
-            // button2
+            // ClearBorrower_Btn
             // 
-            this.button2.Location = new System.Drawing.Point(231, 341);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 29);
-            this.button2.TabIndex = 28;
-            this.button2.Text = "Clear";
-            this.button2.UseVisualStyleBackColor = true;
+            this.ClearBorrower_Btn.Location = new System.Drawing.Point(231, 341);
+            this.ClearBorrower_Btn.Name = "ClearBorrower_Btn";
+            this.ClearBorrower_Btn.Size = new System.Drawing.Size(94, 29);
+            this.ClearBorrower_Btn.TabIndex = 28;
+            this.ClearBorrower_Btn.Text = "Clear";
+            this.ClearBorrower_Btn.UseVisualStyleBackColor = true;
             // 
             // Duration_TxtBox
             // 
@@ -612,14 +648,14 @@
             this.label12.TabIndex = 18;
             this.label12.Text = "Identity Card";
             // 
-            // button3
+            // AddBorrower_Btn
             // 
-            this.button3.Location = new System.Drawing.Point(131, 341);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 29);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Add";
-            this.button3.UseVisualStyleBackColor = true;
+            this.AddBorrower_Btn.Location = new System.Drawing.Point(131, 341);
+            this.AddBorrower_Btn.Name = "AddBorrower_Btn";
+            this.AddBorrower_Btn.Size = new System.Drawing.Size(94, 29);
+            this.AddBorrower_Btn.TabIndex = 17;
+            this.AddBorrower_Btn.Text = "Add";
+            this.AddBorrower_Btn.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -746,7 +782,7 @@
             this.groupBox3.Controls.Add(this.Page_TxtBox);
             this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.Controls.Add(this.BookDesc_RTxtBox);
-            this.groupBox3.Controls.Add(this.button5);
+            this.groupBox3.Controls.Add(this.ClearBook_Btn);
             this.groupBox3.Controls.Add(this.Publish_DPicker);
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.label20);
@@ -755,10 +791,10 @@
             this.groupBox3.Controls.Add(this.label22);
             this.groupBox3.Controls.Add(this.BookCode_TxtBox);
             this.groupBox3.Controls.Add(this.label23);
-            this.groupBox3.Controls.Add(this.button6);
-            this.groupBox3.Location = new System.Drawing.Point(3, 195);
+            this.groupBox3.Controls.Add(this.AddBook_Btn);
+            this.groupBox3.Location = new System.Drawing.Point(3, 194);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(435, 388);
+            this.groupBox3.Size = new System.Drawing.Size(435, 389);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Book";
@@ -794,14 +830,14 @@
             this.BookDesc_RTxtBox.TabIndex = 31;
             this.BookDesc_RTxtBox.Text = "";
             // 
-            // button5
+            // ClearBook_Btn
             // 
-            this.button5.Location = new System.Drawing.Point(231, 341);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(94, 29);
-            this.button5.TabIndex = 28;
-            this.button5.Text = "Clear";
-            this.button5.UseVisualStyleBackColor = true;
+            this.ClearBook_Btn.Location = new System.Drawing.Point(231, 341);
+            this.ClearBook_Btn.Name = "ClearBook_Btn";
+            this.ClearBook_Btn.Size = new System.Drawing.Size(94, 29);
+            this.ClearBook_Btn.TabIndex = 28;
+            this.ClearBook_Btn.Text = "Clear";
+            this.ClearBook_Btn.UseVisualStyleBackColor = true;
             // 
             // Publish_DPicker
             // 
@@ -870,14 +906,14 @@
             this.label23.TabIndex = 18;
             this.label23.Text = "Book Code";
             // 
-            // button6
+            // AddBook_Btn
             // 
-            this.button6.Location = new System.Drawing.Point(131, 341);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(94, 29);
-            this.button6.TabIndex = 17;
-            this.button6.Text = "Add";
-            this.button6.UseVisualStyleBackColor = true;
+            this.AddBook_Btn.Location = new System.Drawing.Point(131, 341);
+            this.AddBook_Btn.Name = "AddBook_Btn";
+            this.AddBook_Btn.Size = new System.Drawing.Size(94, 29);
+            this.AddBook_Btn.TabIndex = 17;
+            this.AddBook_Btn.Text = "Add";
+            this.AddBook_Btn.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -888,7 +924,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(435, 186);
+            this.panel3.Size = new System.Drawing.Size(435, 185);
             this.panel3.TabIndex = 3;
             // 
             // SearchBook_Btn
@@ -1008,9 +1044,9 @@
             this.groupBox4.Controls.Add(this.LibrarianName_TxtBox);
             this.groupBox4.Controls.Add(this.label26);
             this.groupBox4.Controls.Add(this.label27);
-            this.groupBox4.Location = new System.Drawing.Point(3, 184);
+            this.groupBox4.Location = new System.Drawing.Point(3, 183);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(436, 399);
+            this.groupBox4.Size = new System.Drawing.Size(436, 400);
             this.groupBox4.TabIndex = 23;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Current User";
@@ -1092,7 +1128,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1084, 175);
+            this.panel4.Size = new System.Drawing.Size(1084, 174);
             this.panel4.TabIndex = 4;
             // 
             // label17
@@ -1121,11 +1157,11 @@
             this.Librarian_DGrid.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.Librarian_DGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Librarian_DGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Librarian_DGrid.Location = new System.Drawing.Point(445, 184);
+            this.Librarian_DGrid.Location = new System.Drawing.Point(445, 183);
             this.Librarian_DGrid.Name = "Librarian_DGrid";
             this.Librarian_DGrid.RowHeadersWidth = 51;
             this.Librarian_DGrid.RowTemplate.Height = 29;
-            this.Librarian_DGrid.Size = new System.Drawing.Size(642, 399);
+            this.Librarian_DGrid.Size = new System.Drawing.Size(642, 400);
             this.Librarian_DGrid.TabIndex = 24;
             this.Librarian_DGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Librarian_DGrid_CellContentClick);
             // 
@@ -1143,9 +1179,11 @@
             // UserManag_Grid
             // 
             this.UserManag_Grid.ColumnCount = 2;
-            this.UserManag_Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.UserManag_Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.UserManag_Grid.Controls.Add(this.UserManag_DGrid, 1, 0);
+            this.UserManag_Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.17431F));
+            this.UserManag_Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.82569F));
+            this.UserManag_Grid.Controls.Add(this.groupBox6, 0, 1);
+            this.UserManag_Grid.Controls.Add(this.groupBox5, 0, 0);
+            this.UserManag_Grid.Controls.Add(this.tableLayoutPanel1, 1, 0);
             this.UserManag_Grid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UserManag_Grid.Location = new System.Drawing.Point(0, 0);
             this.UserManag_Grid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -1156,7 +1194,276 @@
             this.UserManag_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.UserManag_Grid.Size = new System.Drawing.Size(1090, 586);
             this.UserManag_Grid.TabIndex = 1;
-            this.UserManag_Grid.Visible = false;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox6.Controls.Add(this.RoleLogin_Cbox);
+            this.groupBox6.Controls.Add(this.PasswordLog_TxtBox);
+            this.groupBox6.Controls.Add(this.label35);
+            this.groupBox6.Controls.Add(this.label31);
+            this.groupBox6.Controls.Add(this.StatusTxtBox_Btn);
+            this.groupBox6.Controls.Add(this.ClearLogFrm_Btn);
+            this.groupBox6.Controls.Add(this.BlockUserLog_Btn);
+            this.groupBox6.Controls.Add(this.AddUserLog_Btn);
+            this.groupBox6.Controls.Add(this.UsernameLog_TxtBox);
+            this.groupBox6.Controls.Add(this.label32);
+            this.groupBox6.Controls.Add(this.SetLibrarianID_TxtBox);
+            this.groupBox6.Controls.Add(this.label33);
+            this.groupBox6.Controls.Add(this.label34);
+            this.groupBox6.Location = new System.Drawing.Point(3, 296);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(421, 287);
+            this.groupBox6.TabIndex = 25;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Add User Login";
+            // 
+            // RoleLogin_Cbox
+            // 
+            this.RoleLogin_Cbox.FormattingEnabled = true;
+            this.RoleLogin_Cbox.Items.AddRange(new object[] {
+            "User",
+            "Admin"});
+            this.RoleLogin_Cbox.Location = new System.Drawing.Point(133, 169);
+            this.RoleLogin_Cbox.Name = "RoleLogin_Cbox";
+            this.RoleLogin_Cbox.Size = new System.Drawing.Size(277, 28);
+            this.RoleLogin_Cbox.TabIndex = 43;
+            // 
+            // PasswordLog_TxtBox
+            // 
+            this.PasswordLog_TxtBox.Location = new System.Drawing.Point(132, 124);
+            this.PasswordLog_TxtBox.Name = "PasswordLog_TxtBox";
+            this.PasswordLog_TxtBox.Size = new System.Drawing.Size(280, 27);
+            this.PasswordLog_TxtBox.TabIndex = 42;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(63, 212);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(49, 20);
+            this.label35.TabIndex = 41;
+            this.label35.Text = "Status";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(73, 175);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(39, 20);
+            this.label31.TabIndex = 40;
+            this.label31.Text = "Role";
+            // 
+            // StatusTxtBox_Btn
+            // 
+            this.StatusTxtBox_Btn.Location = new System.Drawing.Point(130, 209);
+            this.StatusTxtBox_Btn.Name = "StatusTxtBox_Btn";
+            this.StatusTxtBox_Btn.Size = new System.Drawing.Size(280, 27);
+            this.StatusTxtBox_Btn.TabIndex = 39;
+            // 
+            // ClearLogFrm_Btn
+            // 
+            this.ClearLogFrm_Btn.Location = new System.Drawing.Point(216, 250);
+            this.ClearLogFrm_Btn.Name = "ClearLogFrm_Btn";
+            this.ClearLogFrm_Btn.Size = new System.Drawing.Size(94, 29);
+            this.ClearLogFrm_Btn.TabIndex = 37;
+            this.ClearLogFrm_Btn.Text = "Clear";
+            this.ClearLogFrm_Btn.UseVisualStyleBackColor = true;
+            // 
+            // BlockUserLog_Btn
+            // 
+            this.BlockUserLog_Btn.Location = new System.Drawing.Point(316, 250);
+            this.BlockUserLog_Btn.Name = "BlockUserLog_Btn";
+            this.BlockUserLog_Btn.Size = new System.Drawing.Size(94, 29);
+            this.BlockUserLog_Btn.TabIndex = 36;
+            this.BlockUserLog_Btn.Text = "Block";
+            this.BlockUserLog_Btn.UseVisualStyleBackColor = true;
+            // 
+            // AddUserLog_Btn
+            // 
+            this.AddUserLog_Btn.Location = new System.Drawing.Point(116, 250);
+            this.AddUserLog_Btn.Name = "AddUserLog_Btn";
+            this.AddUserLog_Btn.Size = new System.Drawing.Size(94, 29);
+            this.AddUserLog_Btn.TabIndex = 35;
+            this.AddUserLog_Btn.Text = "Add";
+            this.AddUserLog_Btn.UseVisualStyleBackColor = true;
+            // 
+            // UsernameLog_TxtBox
+            // 
+            this.UsernameLog_TxtBox.Location = new System.Drawing.Point(132, 80);
+            this.UsernameLog_TxtBox.Name = "UsernameLog_TxtBox";
+            this.UsernameLog_TxtBox.Size = new System.Drawing.Size(280, 27);
+            this.UsernameLog_TxtBox.TabIndex = 34;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(42, 127);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(70, 20);
+            this.label32.TabIndex = 24;
+            this.label32.Text = "Password";
+            // 
+            // SetLibrarianID_TxtBox
+            // 
+            this.SetLibrarianID_TxtBox.Location = new System.Drawing.Point(132, 42);
+            this.SetLibrarianID_TxtBox.Name = "SetLibrarianID_TxtBox";
+            this.SetLibrarianID_TxtBox.Size = new System.Drawing.Size(280, 27);
+            this.SetLibrarianID_TxtBox.TabIndex = 22;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(37, 83);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(75, 20);
+            this.label33.TabIndex = 21;
+            this.label33.Text = "Username";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(26, 45);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(86, 20);
+            this.label34.TabIndex = 20;
+            this.label34.Text = "Librarain ID";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Controls.Add(this.ClearLIbrarain_Btn);
+            this.groupBox5.Controls.Add(this.BlockLIbrarain_Btn);
+            this.groupBox5.Controls.Add(this.AddLibrarian_Btn);
+            this.groupBox5.Controls.Add(this.AddLiGender_TxtBox);
+            this.groupBox5.Controls.Add(this.label25);
+            this.groupBox5.Controls.Add(this.AddLiDiscription_TxtBox);
+            this.groupBox5.Controls.Add(this.AddLiDoB_DPicker);
+            this.groupBox5.Controls.Add(this.label28);
+            this.groupBox5.Controls.Add(this.AddLIbrarian_TxtBox);
+            this.groupBox5.Controls.Add(this.label29);
+            this.groupBox5.Controls.Add(this.label30);
+            this.groupBox5.Location = new System.Drawing.Point(3, 3);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(421, 287);
+            this.groupBox5.TabIndex = 24;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Add Librarian";
+            // 
+            // ClearLIbrarain_Btn
+            // 
+            this.ClearLIbrarain_Btn.Location = new System.Drawing.Point(216, 242);
+            this.ClearLIbrarain_Btn.Name = "ClearLIbrarain_Btn";
+            this.ClearLIbrarain_Btn.Size = new System.Drawing.Size(94, 29);
+            this.ClearLIbrarain_Btn.TabIndex = 37;
+            this.ClearLIbrarain_Btn.Text = "Clear";
+            this.ClearLIbrarain_Btn.UseVisualStyleBackColor = true;
+            // 
+            // BlockLIbrarain_Btn
+            // 
+            this.BlockLIbrarain_Btn.Location = new System.Drawing.Point(316, 242);
+            this.BlockLIbrarain_Btn.Name = "BlockLIbrarain_Btn";
+            this.BlockLIbrarain_Btn.Size = new System.Drawing.Size(94, 29);
+            this.BlockLIbrarain_Btn.TabIndex = 36;
+            this.BlockLIbrarain_Btn.Text = "Block";
+            this.BlockLIbrarain_Btn.UseVisualStyleBackColor = true;
+            // 
+            // AddLibrarian_Btn
+            // 
+            this.AddLibrarian_Btn.Location = new System.Drawing.Point(116, 242);
+            this.AddLibrarian_Btn.Name = "AddLibrarian_Btn";
+            this.AddLibrarian_Btn.Size = new System.Drawing.Size(94, 29);
+            this.AddLibrarian_Btn.TabIndex = 35;
+            this.AddLibrarian_Btn.Text = "Add";
+            this.AddLibrarian_Btn.UseVisualStyleBackColor = true;
+            // 
+            // AddLiGender_TxtBox
+            // 
+            this.AddLiGender_TxtBox.Location = new System.Drawing.Point(132, 80);
+            this.AddLiGender_TxtBox.Name = "AddLiGender_TxtBox";
+            this.AddLiGender_TxtBox.Size = new System.Drawing.Size(280, 27);
+            this.AddLiGender_TxtBox.TabIndex = 34;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(29, 166);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(85, 20);
+            this.label25.TabIndex = 32;
+            this.label25.Text = "Description";
+            // 
+            // AddLiDiscription_TxtBox
+            // 
+            this.AddLiDiscription_TxtBox.Location = new System.Drawing.Point(132, 163);
+            this.AddLiDiscription_TxtBox.Name = "AddLiDiscription_TxtBox";
+            this.AddLiDiscription_TxtBox.Size = new System.Drawing.Size(280, 61);
+            this.AddLiDiscription_TxtBox.TabIndex = 31;
+            this.AddLiDiscription_TxtBox.Text = "";
+            // 
+            // AddLiDoB_DPicker
+            // 
+            this.AddLiDoB_DPicker.Location = new System.Drawing.Point(132, 122);
+            this.AddLiDoB_DPicker.Name = "AddLiDoB_DPicker";
+            this.AddLiDoB_DPicker.Size = new System.Drawing.Size(278, 27);
+            this.AddLiDoB_DPicker.TabIndex = 25;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(20, 127);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(94, 20);
+            this.label28.TabIndex = 24;
+            this.label28.Text = "Date of Birth";
+            // 
+            // AddLIbrarian_TxtBox
+            // 
+            this.AddLIbrarian_TxtBox.Location = new System.Drawing.Point(132, 42);
+            this.AddLIbrarian_TxtBox.Name = "AddLIbrarian_TxtBox";
+            this.AddLIbrarian_TxtBox.Size = new System.Drawing.Size(280, 27);
+            this.AddLIbrarian_TxtBox.TabIndex = 22;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(57, 83);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(57, 20);
+            this.label29.TabIndex = 21;
+            this.label29.Text = "Gender";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(3, 45);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(111, 20);
+            this.label30.TabIndex = 20;
+            this.label30.Text = "Librarian Name";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.UserManag_DGrid, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel5, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(430, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.UserManag_Grid.SetRowSpan(this.tableLayoutPanel1, 2);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.241379F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.75862F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(657, 580);
+            this.tableLayoutPanel1.TabIndex = 26;
             // 
             // UserManag_DGrid
             // 
@@ -1170,6 +1477,7 @@
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.UserManag_DGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.UserManag_DGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableLayoutPanel1.SetColumnSpan(this.UserManag_DGrid, 2);
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -1179,7 +1487,7 @@
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.UserManag_DGrid.DefaultCellStyle = dataGridViewCellStyle11;
             this.UserManag_DGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UserManag_DGrid.Location = new System.Drawing.Point(548, 4);
+            this.UserManag_DGrid.Location = new System.Drawing.Point(3, 46);
             this.UserManag_DGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.UserManag_DGrid.Name = "UserManag_DGrid";
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1191,10 +1499,58 @@
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.UserManag_DGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.UserManag_DGrid.RowHeadersWidth = 51;
-            this.UserManag_Grid.SetRowSpan(this.UserManag_DGrid, 2);
             this.UserManag_DGrid.RowTemplate.Height = 25;
-            this.UserManag_DGrid.Size = new System.Drawing.Size(539, 578);
-            this.UserManag_DGrid.TabIndex = 1;
+            this.UserManag_DGrid.Size = new System.Drawing.Size(651, 530);
+            this.UserManag_DGrid.TabIndex = 2;
+            // 
+            // panel5
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.panel5, 2);
+            this.panel5.Controls.Add(this.UserMngFilter_Cbox);
+            this.panel5.Controls.Add(this.UserMngSearch_Btn);
+            this.panel5.Controls.Add(this.UserMng_TxtBox);
+            this.panel5.Controls.Add(this.label36);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(3, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(651, 36);
+            this.panel5.TabIndex = 3;
+            // 
+            // UserMngFilter_Cbox
+            // 
+            this.UserMngFilter_Cbox.FormattingEnabled = true;
+            this.UserMngFilter_Cbox.Items.AddRange(new object[] {
+            "Librarain",
+            "User Login"});
+            this.UserMngFilter_Cbox.Location = new System.Drawing.Point(337, 4);
+            this.UserMngFilter_Cbox.Name = "UserMngFilter_Cbox";
+            this.UserMngFilter_Cbox.Size = new System.Drawing.Size(112, 28);
+            this.UserMngFilter_Cbox.TabIndex = 23;
+            // 
+            // UserMngSearch_Btn
+            // 
+            this.UserMngSearch_Btn.Location = new System.Drawing.Point(455, 3);
+            this.UserMngSearch_Btn.Name = "UserMngSearch_Btn";
+            this.UserMngSearch_Btn.Size = new System.Drawing.Size(94, 29);
+            this.UserMngSearch_Btn.TabIndex = 22;
+            this.UserMngSearch_Btn.Text = "Search";
+            this.UserMngSearch_Btn.UseVisualStyleBackColor = true;
+            // 
+            // UserMng_TxtBox
+            // 
+            this.UserMng_TxtBox.Location = new System.Drawing.Point(72, 4);
+            this.UserMng_TxtBox.Name = "UserMng_TxtBox";
+            this.UserMng_TxtBox.Size = new System.Drawing.Size(259, 27);
+            this.UserMng_TxtBox.TabIndex = 21;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(13, 7);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(53, 20);
+            this.label36.TabIndex = 20;
+            this.label36.Text = "Search";
             // 
             // tableLayoutPanel6
             // 
@@ -1292,7 +1648,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.Librarian_DGrid)).EndInit();
             this.User_MagTab.ResumeLayout(false);
             this.UserManag_Grid.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.UserManag_DGrid)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.ResumeLayout(false);
 
@@ -1314,7 +1677,6 @@
         private System.Windows.Forms.DataGridView Book_DGrid;
         private System.Windows.Forms.TableLayoutPanel Librarian_Grid;
         private System.Windows.Forms.TableLayoutPanel UserManag_Grid;
-        private System.Windows.Forms.DataGridView UserManag_DGrid;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.Panel panel1;
@@ -1340,7 +1702,7 @@
         private System.Windows.Forms.RichTextBox Description_RTxtBox;
         private System.Windows.Forms.Label Librarian_Lb;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button ClearBorrower_Btn;
         private System.Windows.Forms.ComboBox Duration_TxtBox;
         private System.Windows.Forms.DateTimePicker BorrowDate_DPIcker;
         private System.Windows.Forms.DateTimePicker ReturnDate_DPicker;
@@ -1351,7 +1713,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox IdCardBorr_txtBox;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button AddBorrower_Btn;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button SearchBorr_Btn;
         private System.Windows.Forms.TextBox SearchBorr_TxtBox;
@@ -1361,7 +1723,7 @@
         private System.Windows.Forms.TextBox Page_TxtBox;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.RichTextBox BookDesc_RTxtBox;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button ClearBook_Btn;
         private System.Windows.Forms.DateTimePicker Publish_DPicker;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
@@ -1370,7 +1732,7 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox BookCode_TxtBox;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button AddBook_Btn;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button SearchBook_Btn;
         private System.Windows.Forms.TextBox SearchBook_TxtBox;
@@ -1390,5 +1752,38 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.DataGridView Librarian_DGrid;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button ClearLIbrarain_Btn;
+        private System.Windows.Forms.Button BlockLIbrarain_Btn;
+        private System.Windows.Forms.Button AddLibrarian_Btn;
+        private System.Windows.Forms.TextBox AddLiGender_TxtBox;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.RichTextBox AddLiDiscription_TxtBox;
+        private System.Windows.Forms.DateTimePicker AddLiDoB_DPicker;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox AddLIbrarian_TxtBox;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.ComboBox RoleLogin_Cbox;
+        private System.Windows.Forms.TextBox PasswordLog_TxtBox;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox StatusTxtBox_Btn;
+        private System.Windows.Forms.Button ClearLogFrm_Btn;
+        private System.Windows.Forms.Button BlockUserLog_Btn;
+        private System.Windows.Forms.Button AddUserLog_Btn;
+        private System.Windows.Forms.TextBox UsernameLog_TxtBox;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox SetLibrarianID_TxtBox;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.DataGridView UserManag_DGrid;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.ComboBox UserMngFilter_Cbox;
+        private System.Windows.Forms.Button UserMngSearch_Btn;
+        private System.Windows.Forms.TextBox UserMng_TxtBox;
+        private System.Windows.Forms.Label label36;
     }
 }

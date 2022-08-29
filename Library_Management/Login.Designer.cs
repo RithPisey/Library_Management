@@ -28,68 +28,88 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.LoginPass_TxtBox = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.LibIDLogin_TxtBox = new System.Windows.Forms.TextBox();
+            this.Login_Btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(150, 44);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(198, 23);
-            this.textBox1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(150, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Username";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(150, 74);
+            this.label2.Location = new System.Drawing.Point(171, 84);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 15);
+            this.label2.Size = new System.Drawing.Size(70, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Password";
             // 
-            // textBox2
+            // LoginPass_TxtBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(150, 92);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(198, 23);
-            this.textBox2.TabIndex = 2;
+            this.LoginPass_TxtBox.Location = new System.Drawing.Point(171, 108);
+            this.LoginPass_TxtBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.LoginPass_TxtBox.Name = "LoginPass_TxtBox";
+            this.LoginPass_TxtBox.PasswordChar = '*';
+            this.LoginPass_TxtBox.Size = new System.Drawing.Size(226, 27);
+            this.LoginPass_TxtBox.TabIndex = 1;
+            this.LoginPass_TxtBox.UseSystemPasswordChar = true;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Library_Management.Properties.Resources._01;
-            this.pictureBox1.Location = new System.Drawing.Point(14, 20);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 25);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(113, 97);
+            this.pictureBox1.Size = new System.Drawing.Size(129, 129);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(171, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 20);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Librarian ID";
+            // 
+            // LibIDLogin_TxtBox
+            // 
+            this.LibIDLogin_TxtBox.Location = new System.Drawing.Point(171, 50);
+            this.LibIDLogin_TxtBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.LibIDLogin_TxtBox.Name = "LibIDLogin_TxtBox";
+            this.LibIDLogin_TxtBox.Size = new System.Drawing.Size(226, 27);
+            this.LibIDLogin_TxtBox.TabIndex = 0;
+            // 
+            // Login_Btn
+            // 
+            this.Login_Btn.Location = new System.Drawing.Point(303, 152);
+            this.Login_Btn.Name = "Login_Btn";
+            this.Login_Btn.Size = new System.Drawing.Size(94, 29);
+            this.Login_Btn.TabIndex = 3;
+            this.Login_Btn.Text = "Login";
+            this.Login_Btn.UseVisualStyleBackColor = true;
+            this.Login_Btn.Click += new System.EventHandler(this.Login_Btn_Click);
+            // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(360, 142);
+            this.ClientSize = new System.Drawing.Size(411, 193);
+            this.Controls.Add(this.Login_Btn);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.LibIDLogin_TxtBox);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.LoginPass_TxtBox);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -97,11 +117,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox LoginPass_TxtBox;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox LibIDLogin_TxtBox;
+        private System.Windows.Forms.Button Login_Btn;
     }
 }

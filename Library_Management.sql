@@ -150,8 +150,18 @@
 --###############################
 
 -- create user login
+
+alter function verifyLogin(@Li_ID int, @Password nvarchar(50))
+returns table
+as return(
+select Login.Li_ID, Login.Password, Login.Role from Login where Login.Li_ID = CAST(@Li_ID as int) and Login.Password = @Password
+)
+
+select * from verifyLogin('1001', 'DefaultAdmin')
 -- delete user login
 --	delete book
+
+
 
 
 

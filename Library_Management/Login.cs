@@ -7,16 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Library_Management.MyController;
 
 namespace Library_Management
 {
     public partial class Login : Form
     {
-        Controller myController;
+        Library_Management.MyController.Login login;
         public Login()
         {
             InitializeComponent();
-            myController = new Controller();
+            login = new Library_Management.MyController.Login();
         }
         
         private void Login_Btn_Click(object sender, EventArgs e)
@@ -26,7 +27,7 @@ namespace Library_Management
                 MessageBox.Show("Make sure all text box are not empty!", "Error");
                 return;
             }
-            string status = myController.VerifyLogin(LibIDLogin_TxtBox.Text, LoginPass_TxtBox.Text);
+            string status = login.VerifyLogin(LibIDLogin_TxtBox.Text, LoginPass_TxtBox.Text);
             if(status == "success")
             {
                 MainForm mainForm = new MainForm();

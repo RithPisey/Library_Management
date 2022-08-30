@@ -49,8 +49,7 @@ namespace Library_Management
 
         public DataTable getTable(string sql)
         {
-            //userDataTable.Clear();
-      
+            //userDataTable.Clear();  
             DataTable table = new DataTable();
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sql, connectionString);
             try
@@ -61,10 +60,24 @@ namespace Library_Management
             {
                 return null;
             }
-
-
             return table;
             //return userDataTable.Tables[TableName] as DataTable;
+        }
+
+        public bool ExecuteQuery(string sql)
+        {
+            SqlCommand sqlCommand = new SqlCommand(sql, connection);
+            //sqlCommand.ExecuteNonQuery();
+            try
+            {
+               sqlCommand.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
         }
 
     }

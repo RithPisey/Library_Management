@@ -49,6 +49,7 @@
             this.UCheckIn_Grid = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.TimeNowUVisitor_Btn = new System.Windows.Forms.Button();
             this.CheckOutUser_Btn = new System.Windows.Forms.Button();
             this.DateOut_DPicker = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -73,6 +74,7 @@
             this.Borrower_Tab = new System.Windows.Forms.TabPage();
             this.Borrower_Grid = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.BorrReturned_Btn = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.Description_RTxtBox = new System.Windows.Forms.RichTextBox();
             this.Librarian_Lb = new System.Windows.Forms.Label();
@@ -90,6 +92,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.AddBorrower_Btn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Borrowing_CkBox = new System.Windows.Forms.CheckBox();
             this.SearchBorr_Btn = new System.Windows.Forms.Button();
             this.SearchBorr_TxtBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -98,6 +101,8 @@
             this.Book_Tab = new System.Windows.Forms.TabPage();
             this.Book_Grid = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.BookLang_TxtBox = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
             this.Author_TxtBox = new System.Windows.Forms.TextBox();
             this.Page_TxtBox = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -280,6 +285,7 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.TimeNowUVisitor_Btn);
             this.groupBox7.Controls.Add(this.CheckOutUser_Btn);
             this.groupBox7.Controls.Add(this.DateOut_DPicker);
             this.groupBox7.Controls.Add(this.label5);
@@ -289,6 +295,16 @@
             this.groupBox7.TabIndex = 31;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Check Out";
+            // 
+            // TimeNowUVisitor_Btn
+            // 
+            this.TimeNowUVisitor_Btn.Location = new System.Drawing.Point(316, 38);
+            this.TimeNowUVisitor_Btn.Name = "TimeNowUVisitor_Btn";
+            this.TimeNowUVisitor_Btn.Size = new System.Drawing.Size(64, 29);
+            this.TimeNowUVisitor_Btn.TabIndex = 34;
+            this.TimeNowUVisitor_Btn.Text = "Now";
+            this.TimeNowUVisitor_Btn.UseVisualStyleBackColor = true;
+            this.TimeNowUVisitor_Btn.Click += new System.EventHandler(this.TimeNowUVisitor_Btn_Click);
             // 
             // CheckOutUser_Btn
             // 
@@ -306,7 +322,7 @@
             this.DateOut_DPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DateOut_DPicker.Location = new System.Drawing.Point(99, 38);
             this.DateOut_DPicker.Name = "DateOut_DPicker";
-            this.DateOut_DPicker.Size = new System.Drawing.Size(278, 27);
+            this.DateOut_DPicker.Size = new System.Drawing.Size(211, 27);
             this.DateOut_DPicker.TabIndex = 32;
             // 
             // label5
@@ -481,6 +497,7 @@
             this.UnCheckOut_ChBox.TabIndex = 33;
             this.UnCheckOut_ChBox.Text = "Uncheck out";
             this.UnCheckOut_ChBox.UseVisualStyleBackColor = true;
+            this.UnCheckOut_ChBox.CheckedChanged += new System.EventHandler(this.UnCheckOut_ChBox_CheckedChanged);
             // 
             // userTime_Lb
             // 
@@ -556,8 +573,8 @@
             this.Borrower_Grid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Borrower_Grid.Name = "Borrower_Grid";
             this.Borrower_Grid.RowCount = 2;
-            this.Borrower_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.87197F));
-            this.Borrower_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.12803F));
+            this.Borrower_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.91003F));
+            this.Borrower_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.08997F));
             this.Borrower_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.Borrower_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.Borrower_Grid.Size = new System.Drawing.Size(1084, 578);
@@ -568,6 +585,7 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.BorrReturned_Btn);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.Description_RTxtBox);
             this.groupBox2.Controls.Add(this.Librarian_Lb);
@@ -584,12 +602,23 @@
             this.groupBox2.Controls.Add(this.IdCardBorr_txtBox);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.AddBorrower_Btn);
-            this.groupBox2.Location = new System.Drawing.Point(3, 193);
+            this.groupBox2.Location = new System.Drawing.Point(3, 198);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(428, 382);
+            this.groupBox2.Size = new System.Drawing.Size(428, 377);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Borrower Form";
+            // 
+            // BorrReturned_Btn
+            // 
+            this.BorrReturned_Btn.BackColor = System.Drawing.Color.IndianRed;
+            this.BorrReturned_Btn.Location = new System.Drawing.Point(315, 327);
+            this.BorrReturned_Btn.Name = "BorrReturned_Btn";
+            this.BorrReturned_Btn.Size = new System.Drawing.Size(94, 29);
+            this.BorrReturned_Btn.TabIndex = 33;
+            this.BorrReturned_Btn.Text = "Returned";
+            this.BorrReturned_Btn.UseVisualStyleBackColor = false;
+            this.BorrReturned_Btn.Click += new System.EventHandler(this.BorrReturned_Btn_Click);
             // 
             // label14
             // 
@@ -622,13 +651,13 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(46, 33);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(67, 20);
+            this.label13.Size = new System.Drawing.Size(70, 20);
             this.label13.TabIndex = 29;
-            this.label13.Text = "LIbrarian";
+            this.label13.Text = "LIbrarian:";
             // 
             // ClearBorrower_Btn
             // 
-            this.ClearBorrower_Btn.Location = new System.Drawing.Point(231, 341);
+            this.ClearBorrower_Btn.Location = new System.Drawing.Point(219, 327);
             this.ClearBorrower_Btn.Name = "ClearBorrower_Btn";
             this.ClearBorrower_Btn.Size = new System.Drawing.Size(94, 29);
             this.ClearBorrower_Btn.TabIndex = 28;
@@ -718,15 +747,17 @@
             // 
             // AddBorrower_Btn
             // 
-            this.AddBorrower_Btn.Location = new System.Drawing.Point(131, 341);
+            this.AddBorrower_Btn.Location = new System.Drawing.Point(119, 327);
             this.AddBorrower_Btn.Name = "AddBorrower_Btn";
             this.AddBorrower_Btn.Size = new System.Drawing.Size(94, 29);
             this.AddBorrower_Btn.TabIndex = 17;
             this.AddBorrower_Btn.Text = "Add";
             this.AddBorrower_Btn.UseVisualStyleBackColor = true;
+            this.AddBorrower_Btn.Click += new System.EventHandler(this.AddBorrower_Btn_Click);
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.Borrowing_CkBox);
             this.panel2.Controls.Add(this.SearchBorr_Btn);
             this.panel2.Controls.Add(this.SearchBorr_TxtBox);
             this.panel2.Controls.Add(this.label7);
@@ -734,29 +765,43 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(428, 184);
+            this.panel2.Size = new System.Drawing.Size(428, 189);
             this.panel2.TabIndex = 2;
+            // 
+            // Borrowing_CkBox
+            // 
+            this.Borrowing_CkBox.AutoSize = true;
+            this.Borrowing_CkBox.Checked = true;
+            this.Borrowing_CkBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.Borrowing_CkBox.Location = new System.Drawing.Point(78, 156);
+            this.Borrowing_CkBox.Name = "Borrowing_CkBox";
+            this.Borrowing_CkBox.Size = new System.Drawing.Size(100, 24);
+            this.Borrowing_CkBox.TabIndex = 34;
+            this.Borrowing_CkBox.Text = "Borrowing";
+            this.Borrowing_CkBox.UseVisualStyleBackColor = true;
             // 
             // SearchBorr_Btn
             // 
-            this.SearchBorr_Btn.Location = new System.Drawing.Point(331, 143);
+            this.SearchBorr_Btn.Location = new System.Drawing.Point(331, 123);
             this.SearchBorr_Btn.Name = "SearchBorr_Btn";
             this.SearchBorr_Btn.Size = new System.Drawing.Size(94, 29);
             this.SearchBorr_Btn.TabIndex = 19;
             this.SearchBorr_Btn.Text = "Search";
             this.SearchBorr_Btn.UseVisualStyleBackColor = true;
+            this.SearchBorr_Btn.Click += new System.EventHandler(this.SearchBorr_Btn_Click);
             // 
             // SearchBorr_TxtBox
             // 
-            this.SearchBorr_TxtBox.Location = new System.Drawing.Point(69, 145);
+            this.SearchBorr_TxtBox.Location = new System.Drawing.Point(78, 123);
             this.SearchBorr_TxtBox.Name = "SearchBorr_TxtBox";
-            this.SearchBorr_TxtBox.Size = new System.Drawing.Size(259, 27);
+            this.SearchBorr_TxtBox.Size = new System.Drawing.Size(248, 27);
             this.SearchBorr_TxtBox.TabIndex = 18;
+            this.SearchBorr_TxtBox.TextChanged += new System.EventHandler(this.SearchBorr_TxtBox_TextChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 148);
+            this.label7.Location = new System.Drawing.Point(19, 126);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 20);
             this.label7.TabIndex = 17;
@@ -765,10 +810,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Library_Management.Properties.Resources._01;
-            this.pictureBox2.Location = new System.Drawing.Point(146, 7);
+            this.pictureBox2.Location = new System.Drawing.Point(144, 11);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(129, 129);
+            this.pictureBox2.Size = new System.Drawing.Size(114, 105);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
@@ -810,6 +855,7 @@
             this.Borrower_DGrid.RowTemplate.Height = 25;
             this.Borrower_DGrid.Size = new System.Drawing.Size(644, 570);
             this.Borrower_DGrid.TabIndex = 1;
+            this.Borrower_DGrid.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Borrower_DGrid_CellEnter);
             // 
             // Book_Tab
             // 
@@ -846,6 +892,8 @@
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.BookLang_TxtBox);
+            this.groupBox3.Controls.Add(this.label37);
             this.groupBox3.Controls.Add(this.Author_TxtBox);
             this.groupBox3.Controls.Add(this.Page_TxtBox);
             this.groupBox3.Controls.Add(this.label16);
@@ -867,6 +915,22 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Book";
             // 
+            // BookLang_TxtBox
+            // 
+            this.BookLang_TxtBox.Location = new System.Drawing.Point(131, 191);
+            this.BookLang_TxtBox.Name = "BookLang_TxtBox";
+            this.BookLang_TxtBox.Size = new System.Drawing.Size(280, 27);
+            this.BookLang_TxtBox.TabIndex = 36;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(39, 194);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(74, 20);
+            this.label37.TabIndex = 35;
+            this.label37.Text = "Language";
+            // 
             // Author_TxtBox
             // 
             this.Author_TxtBox.Location = new System.Drawing.Point(131, 118);
@@ -884,7 +948,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(28, 236);
+            this.label16.Location = new System.Drawing.Point(28, 272);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(85, 20);
             this.label16.TabIndex = 32;
@@ -892,7 +956,7 @@
             // 
             // BookDesc_RTxtBox
             // 
-            this.BookDesc_RTxtBox.Location = new System.Drawing.Point(131, 233);
+            this.BookDesc_RTxtBox.Location = new System.Drawing.Point(131, 269);
             this.BookDesc_RTxtBox.Name = "BookDesc_RTxtBox";
             this.BookDesc_RTxtBox.Size = new System.Drawing.Size(280, 61);
             this.BookDesc_RTxtBox.TabIndex = 31;
@@ -906,11 +970,11 @@
             this.ClearBook_Btn.TabIndex = 28;
             this.ClearBook_Btn.Text = "Clear";
             this.ClearBook_Btn.UseVisualStyleBackColor = true;
+            this.ClearBook_Btn.Click += new System.EventHandler(this.ClearBook_Btn_Click);
             // 
             // Publish_DPicker
             // 
-            this.Publish_DPicker.Enabled = false;
-            this.Publish_DPicker.Location = new System.Drawing.Point(131, 192);
+            this.Publish_DPicker.Location = new System.Drawing.Point(131, 228);
             this.Publish_DPicker.Name = "Publish_DPicker";
             this.Publish_DPicker.Size = new System.Drawing.Size(278, 27);
             this.Publish_DPicker.TabIndex = 25;
@@ -918,7 +982,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(25, 197);
+            this.label19.Location = new System.Drawing.Point(25, 233);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(88, 20);
             this.label19.TabIndex = 24;
@@ -982,6 +1046,7 @@
             this.AddBook_Btn.TabIndex = 17;
             this.AddBook_Btn.Text = "Add";
             this.AddBook_Btn.UseVisualStyleBackColor = true;
+            this.AddBook_Btn.Click += new System.EventHandler(this.AddBook_Btn_Click);
             // 
             // panel3
             // 
@@ -997,12 +1062,13 @@
             // 
             // SearchBook_Btn
             // 
-            this.SearchBook_Btn.Location = new System.Drawing.Point(331, 143);
+            this.SearchBook_Btn.Location = new System.Drawing.Point(331, 144);
             this.SearchBook_Btn.Name = "SearchBook_Btn";
             this.SearchBook_Btn.Size = new System.Drawing.Size(94, 29);
             this.SearchBook_Btn.TabIndex = 19;
             this.SearchBook_Btn.Text = "Search";
             this.SearchBook_Btn.UseVisualStyleBackColor = true;
+            this.SearchBook_Btn.Click += new System.EventHandler(this.SearchBook_Btn_Click);
             // 
             // SearchBook_TxtBox
             // 
@@ -1010,6 +1076,7 @@
             this.SearchBook_TxtBox.Name = "SearchBook_TxtBox";
             this.SearchBook_TxtBox.Size = new System.Drawing.Size(259, 27);
             this.SearchBook_TxtBox.TabIndex = 18;
+            this.SearchBook_TxtBox.TextChanged += new System.EventHandler(this.SearchBook_TxtBox_TextChanged);
             // 
             // label15
             // 
@@ -1068,6 +1135,7 @@
             this.Book_DGrid.RowTemplate.Height = 25;
             this.Book_DGrid.Size = new System.Drawing.Size(643, 578);
             this.Book_DGrid.TabIndex = 1;
+            this.Book_DGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Book_DGrid_CellClick);
             // 
             // Librarian_Tab
             // 
@@ -1870,5 +1938,10 @@
         private System.Windows.Forms.CheckBox UnCheckOut_ChBox;
         private System.Windows.Forms.TextBox LiID_TxtBox;
         private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Button TimeNowUVisitor_Btn;
+        private System.Windows.Forms.TextBox BookLang_TxtBox;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Button BorrReturned_Btn;
+        private System.Windows.Forms.CheckBox Borrowing_CkBox;
     }
 }

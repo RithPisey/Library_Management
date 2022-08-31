@@ -10,7 +10,6 @@ namespace Library_Management.MyController
     internal class Login
     {
         string UserRole = "";
-        string UserID = "";
 
 
         Database myDatabase;
@@ -30,10 +29,11 @@ namespace Library_Management.MyController
                     {
                         if (Li_ID == dr.ItemArray[0].ToString())
                         {
+                            DataContext.UserID = dr.ItemArray[0].ToString();
                             if (password == dr.ItemArray[1].ToString())
                             {
                                 UserRole = dr.ItemArray[2].ToString();
-                                UserID = dr.ItemArray[0].ToString();
+                               
                                 return "success";
                             }
                         }
@@ -46,7 +46,7 @@ namespace Library_Management.MyController
 
         }
 
-        public DataRow? GetLibrarianDetail(string LiID)
+        public DataTable GetLibrarianDetail(string LiID)
         {
             //select * from fn_getLibrarain(1001)
 
@@ -55,11 +55,7 @@ namespace Library_Management.MyController
                 DataTable dt = myDatabase.getTable($"select * from fn_getLibrarain({LiID})");
                 if (dt != null)
                 {
-                    long rowNum = dt.Rows.Count;
-                    foreach (DataRow dr in dt.Rows)
-                    {
-                        return dr;
-                    }
+                    return dt;
                 }
                 else return null;
             }
@@ -88,10 +84,6 @@ namespace Library_Management.MyController
         public string GetUserRole()
         {
             return UserRole;
-        }
-        public string GetUserID()
-        {
-            return UserID;
         }
     }
 }

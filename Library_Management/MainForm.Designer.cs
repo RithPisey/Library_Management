@@ -143,11 +143,11 @@
             this.User_MagTab = new System.Windows.Forms.TabPage();
             this.UserManag_Grid = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.StatusTxtBox_CBox = new System.Windows.Forms.ComboBox();
             this.RoleLogin_Cbox = new System.Windows.Forms.ComboBox();
             this.PasswordLog_TxtBox = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.StatusTxtBox_Btn = new System.Windows.Forms.TextBox();
             this.ClearLogFrm_Btn = new System.Windows.Forms.Button();
             this.BlockUserLog_Btn = new System.Windows.Forms.Button();
             this.AddUserLog_Btn = new System.Windows.Forms.Button();
@@ -156,7 +156,6 @@
             this.label34 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.ClearLIbrarain_Btn = new System.Windows.Forms.Button();
-            this.BlockLIbrarain_Btn = new System.Windows.Forms.Button();
             this.AddLibrarian_Btn = new System.Windows.Forms.Button();
             this.AddLiGender_TxtBox = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -663,6 +662,7 @@
             this.ClearBorrower_Btn.TabIndex = 28;
             this.ClearBorrower_Btn.Text = "Clear";
             this.ClearBorrower_Btn.UseVisualStyleBackColor = true;
+            this.ClearBorrower_Btn.Click += new System.EventHandler(this.ClearBorrower_Btn_Click);
             // 
             // Duration_TxtBox
             // 
@@ -1356,11 +1356,11 @@
             this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox6.Controls.Add(this.StatusTxtBox_CBox);
             this.groupBox6.Controls.Add(this.RoleLogin_Cbox);
             this.groupBox6.Controls.Add(this.PasswordLog_TxtBox);
             this.groupBox6.Controls.Add(this.label35);
             this.groupBox6.Controls.Add(this.label31);
-            this.groupBox6.Controls.Add(this.StatusTxtBox_Btn);
             this.groupBox6.Controls.Add(this.ClearLogFrm_Btn);
             this.groupBox6.Controls.Add(this.BlockUserLog_Btn);
             this.groupBox6.Controls.Add(this.AddUserLog_Btn);
@@ -1374,6 +1374,19 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Add User Login";
             // 
+            // StatusTxtBox_CBox
+            // 
+            this.StatusTxtBox_CBox.FormattingEnabled = true;
+            this.StatusTxtBox_CBox.Items.AddRange(new object[] {
+            "Active",
+            "Blocked"});
+            this.StatusTxtBox_CBox.Location = new System.Drawing.Point(133, 168);
+            this.StatusTxtBox_CBox.Name = "StatusTxtBox_CBox";
+            this.StatusTxtBox_CBox.Size = new System.Drawing.Size(277, 28);
+            this.StatusTxtBox_CBox.TabIndex = 44;
+            this.StatusTxtBox_CBox.Tag = "";
+            this.StatusTxtBox_CBox.Text = "Active";
+            // 
             // RoleLogin_Cbox
             // 
             this.RoleLogin_Cbox.FormattingEnabled = true;
@@ -1384,6 +1397,7 @@
             this.RoleLogin_Cbox.Name = "RoleLogin_Cbox";
             this.RoleLogin_Cbox.Size = new System.Drawing.Size(277, 28);
             this.RoleLogin_Cbox.TabIndex = 43;
+            this.RoleLogin_Cbox.Text = "User";
             // 
             // PasswordLog_TxtBox
             // 
@@ -1411,13 +1425,6 @@
             this.label31.TabIndex = 40;
             this.label31.Text = "Role";
             // 
-            // StatusTxtBox_Btn
-            // 
-            this.StatusTxtBox_Btn.Location = new System.Drawing.Point(130, 168);
-            this.StatusTxtBox_Btn.Name = "StatusTxtBox_Btn";
-            this.StatusTxtBox_Btn.Size = new System.Drawing.Size(280, 27);
-            this.StatusTxtBox_Btn.TabIndex = 39;
-            // 
             // ClearLogFrm_Btn
             // 
             this.ClearLogFrm_Btn.Location = new System.Drawing.Point(216, 208);
@@ -1426,6 +1433,7 @@
             this.ClearLogFrm_Btn.TabIndex = 37;
             this.ClearLogFrm_Btn.Text = "Clear";
             this.ClearLogFrm_Btn.UseVisualStyleBackColor = true;
+            this.ClearLogFrm_Btn.Click += new System.EventHandler(this.ClearLogFrm_Btn_Click);
             // 
             // BlockUserLog_Btn
             // 
@@ -1435,6 +1443,7 @@
             this.BlockUserLog_Btn.TabIndex = 36;
             this.BlockUserLog_Btn.Text = "Block";
             this.BlockUserLog_Btn.UseVisualStyleBackColor = true;
+            this.BlockUserLog_Btn.Click += new System.EventHandler(this.BlockUserLog_Btn_Click);
             // 
             // AddUserLog_Btn
             // 
@@ -1444,6 +1453,7 @@
             this.AddUserLog_Btn.TabIndex = 35;
             this.AddUserLog_Btn.Text = "Add";
             this.AddUserLog_Btn.UseVisualStyleBackColor = true;
+            this.AddUserLog_Btn.Click += new System.EventHandler(this.AddUserLog_Btn_Click);
             // 
             // label32
             // 
@@ -1476,7 +1486,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox5.Controls.Add(this.ClearLIbrarain_Btn);
-            this.groupBox5.Controls.Add(this.BlockLIbrarain_Btn);
             this.groupBox5.Controls.Add(this.AddLibrarian_Btn);
             this.groupBox5.Controls.Add(this.AddLiGender_TxtBox);
             this.groupBox5.Controls.Add(this.label25);
@@ -1501,15 +1510,7 @@
             this.ClearLIbrarain_Btn.TabIndex = 37;
             this.ClearLIbrarain_Btn.Text = "Clear";
             this.ClearLIbrarain_Btn.UseVisualStyleBackColor = true;
-            // 
-            // BlockLIbrarain_Btn
-            // 
-            this.BlockLIbrarain_Btn.Location = new System.Drawing.Point(316, 242);
-            this.BlockLIbrarain_Btn.Name = "BlockLIbrarain_Btn";
-            this.BlockLIbrarain_Btn.Size = new System.Drawing.Size(94, 29);
-            this.BlockLIbrarain_Btn.TabIndex = 36;
-            this.BlockLIbrarain_Btn.Text = "Block";
-            this.BlockLIbrarain_Btn.UseVisualStyleBackColor = true;
+            this.ClearLIbrarain_Btn.Click += new System.EventHandler(this.ClearLIbrarain_Btn_Click);
             // 
             // AddLibrarian_Btn
             // 
@@ -1519,6 +1520,7 @@
             this.AddLibrarian_Btn.TabIndex = 35;
             this.AddLibrarian_Btn.Text = "Add";
             this.AddLibrarian_Btn.UseVisualStyleBackColor = true;
+            this.AddLibrarian_Btn.Click += new System.EventHandler(this.AddLibrarian_Btn_Click);
             // 
             // AddLiGender_TxtBox
             // 
@@ -1640,6 +1642,7 @@
             this.UserManag_DGrid.RowTemplate.Height = 25;
             this.UserManag_DGrid.Size = new System.Drawing.Size(652, 531);
             this.UserManag_DGrid.TabIndex = 2;
+            this.UserManag_DGrid.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.UserManag_DGrid_CellEnter);
             // 
             // panel5
             // 
@@ -1658,12 +1661,14 @@
             // 
             this.UserMngFilter_Cbox.FormattingEnabled = true;
             this.UserMngFilter_Cbox.Items.AddRange(new object[] {
-            "Librarain",
+            "Librarian",
             "User Login"});
             this.UserMngFilter_Cbox.Location = new System.Drawing.Point(337, 4);
             this.UserMngFilter_Cbox.Name = "UserMngFilter_Cbox";
             this.UserMngFilter_Cbox.Size = new System.Drawing.Size(112, 28);
             this.UserMngFilter_Cbox.TabIndex = 23;
+            this.UserMngFilter_Cbox.Text = "Librarian";
+            this.UserMngFilter_Cbox.SelectedIndexChanged += new System.EventHandler(this.UserMngFilter_Cbox_SelectedIndexChanged);
             // 
             // UserMngSearch_Btn
             // 
@@ -1900,7 +1905,6 @@
         private System.Windows.Forms.DataGridView Librarian_DGrid;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button ClearLIbrarain_Btn;
-        private System.Windows.Forms.Button BlockLIbrarain_Btn;
         private System.Windows.Forms.Button AddLibrarian_Btn;
         private System.Windows.Forms.TextBox AddLiGender_TxtBox;
         private System.Windows.Forms.Label label25;
@@ -1915,7 +1919,6 @@
         private System.Windows.Forms.TextBox PasswordLog_TxtBox;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TextBox StatusTxtBox_Btn;
         private System.Windows.Forms.Button ClearLogFrm_Btn;
         private System.Windows.Forms.Button BlockUserLog_Btn;
         private System.Windows.Forms.Button AddUserLog_Btn;
@@ -1943,5 +1946,6 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Button BorrReturned_Btn;
         private System.Windows.Forms.CheckBox Borrowing_CkBox;
+        private System.Windows.Forms.ComboBox StatusTxtBox_CBox;
     }
 }

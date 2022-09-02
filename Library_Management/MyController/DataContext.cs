@@ -9,6 +9,6 @@ namespace Library_Management.MyController
     internal class DataContext
     {
         public static string UserID = "";
-       
+        public static string UserRole = "";       
     }
 }

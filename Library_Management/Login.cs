@@ -38,6 +38,10 @@ namespace Library_Management
             {
                 MessageBox.Show("There's something wrong! Please complete your password and  Librarian ID again.","Error");
             }
+            else
+            {
+                MessageBox.Show(status);
+            }
         }
 
         private void Login_Load(object sender, EventArgs e)

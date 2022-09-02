@@ -19,8 +19,10 @@ namespace Library_Management.MyController
         }
         public string VerifyLogin(string Li_ID, string password)
         {
+            string returnString = "";
             if (myDatabase.getConnectionState() == "open")
             {
+
                 DataTable dt = myDatabase.getTable("select * from verifyLogin(" + Li_ID + ", '" + password + "')");
                 if (dt != null)
                 {
@@ -32,18 +34,22 @@ namespace Library_Management.MyController
                             DataContext.UserID = dr.ItemArray[0].ToString();
                             if (password == dr.ItemArray[1].ToString())
                             {
-                                UserRole = dr.ItemArray[2].ToString();
-                               
-                                return "success";
+                                if (dr.ItemArray[3].ToString() == "Active")
+                                {
+                                    DataContext.UserRole = dr.ItemArray[2].ToString();
+                                    returnString = "success";
+                                }
+                                else returnString = "User has been blocked!";
                             }
+                            else returnString = "Wrong password!";
                         }
+                        else returnString = "Wrong Username!";
                     }
                 }
-                else return "error";
+                else returnString = "error";
             }
-            else return "error";
-            return "";
-
+            else returnString = "error";
+            return returnString;
         }
 
         public DataTable GetLibrarianDetail(string LiID)
@@ -69,8 +75,8 @@ namespace Library_Management.MyController
            
             if (myDatabase.getConnectionState() == "open")
             {
-                DataTable dt = myDatabase.getTable($" select Librarian.Li_ID, Librarian.Li_Name, Librarian.Li_Gender, Librarian.Li_DoB, Librarian.Description" +
-                    $" from Librarian inner join Login on Librarian.Li_ID = Login.Li_ID");
+                DataTable dt = myDatabase.getTable($" select *" +
+                    $" from Librarian");
                 if (dt != null)
                 {
                     return dt;

@@ -20,6 +20,8 @@ namespace Library_Management
         Library_Management.MyController.Login login;
         Borrower borrower;
         Book book;
+        Librarian librarian;
+        UserLogin userLogin;
         public MainForm()
         {
             InitializeComponent();
@@ -28,6 +30,8 @@ namespace Library_Management
             login = new MyController.Login();
             borrower = new MyController.Borrower();
             book = new Book();
+            librarian = new Librarian();
+            userLogin = new UserLogin();
         }
         void fetchUserVistor()
         {
@@ -43,7 +47,7 @@ namespace Library_Management
                 foreach(DataRow Row in LiRow.Rows)
                 {
                     LiID_TxtBox.Text = Row.ItemArray[0].ToString();
-                    Librarian_Lb.Text = Row.ItemArray[1].ToString();
+                    Librarian_Lb.Text = LibrarianName_TxtBox.Text;
                     LibrarianName_TxtBox.Text = Row.ItemArray[1].ToString();
                     LiGender_TxtBox.Text = Row.ItemArray[2].ToString();
                     LiDoB_DPicker.Text = Row.ItemArray[3].ToString();
@@ -55,16 +59,34 @@ namespace Library_Management
         void fetchBorrower()
         {
             Borrower_DGrid.DataSource = borrower.FetchBorrower();
+            UserMng();
+        }
+        void UserMng()
+        {
+            if (UserMngFilter_Cbox.Text == "Librarian")
+            {
+                UserManag_DGrid.DataSource = login.GetAllLibrarain();
+            }
+            else if (UserMngFilter_Cbox.Text == "User Login")
+            {
+                fetchUserLogin();
+            }
         }
         void fetchBook()
         {
             Book_DGrid.DataSource = book.FetchBook();
         }
 
+        void fetchUserLogin()
+        {
+            UserManag_DGrid.DataSource = userLogin.fetchUserLogin();
+        }
+        
+
         private void MainForm_Load(object sender, EventArgs e)
         {
-           
-            if(login.GetUserRole() == "Admin")
+            MessageBox.Show(DataContext.UserRole);
+            if(DataContext.UserRole == "Admin")
             {
                 UserManag_Grid.Enabled = true;
             }
@@ -276,22 +298,23 @@ namespace Library_Management
             DataTable dataTable;
             if (Borrowing_CkBox.Checked)
             {
+                dataTable = borrower.SearchBorrowingUser(SearchBorr_TxtBox.Text);
+                if (dataTable == null)
+                {
+                    fetchBorrower();
+                    return;
+                }
+                else if (dataTable.Rows.Count > 0)
+                {
+                    Borrower_DGrid.DataSource = dataTable;
+                }
+                else
+                {
+                    fetchBorrower();
+                }
                 try
                 {
-                    dataTable = borrower.SearchBorrowingUser(SearchBorr_TxtBox.Text);
-                    if(dataTable == null)
-                    {
-                        fetchBorrower();
-                        return;
-                    }
-                    if (dataTable.Rows.Count > 0)
-                    {
-                        Borrower_DGrid.DataSource = dataTable;
-                    }
-                    else
-                    {
-                        fetchBorrower();
-                    }
+                  
                 }
                 catch(Exception ex)
                 {
@@ -303,13 +326,18 @@ namespace Library_Management
                 try
                 {
                     dataTable = borrower.SearchAllBorrower(SearchBorr_TxtBox.Text);
-                    if (dataTable.Rows.Count > 0 || dataTable != null)
+                    if (dataTable == null)
+                    {
+                        fetchBorrower();
+                        return;
+                    }
+                    else if (dataTable.Rows.Count > 0)
                     {
                         Borrower_DGrid.DataSource = dataTable;
                     }
                     else
                     {
-                        fetchUserVistor();
+                        fetchBorrower();
                     }
                 }
                 catch (Exception ex)
@@ -332,16 +360,13 @@ namespace Library_Management
         {
             if (e.RowIndex >= 0)
             {
-                BookCode_TxtBox.Text = Book_DGrid[0, e.RowIndex].Value.ToString();
-
                 IdCardBorr_txtBox.Text = Borrower_DGrid[0,e.RowIndex].Value.ToString();
-                BookCodeBorr_TxtBox.Text = Borrower_DGrid[1, e.RowIndex].Value.ToString();
+                BookCodeBorr_TxtBox.Text = Borrower_DGrid[3, e.RowIndex].Value.ToString();
                 Librarian_Lb.Text = Borrower_DGrid[2, e.RowIndex].Value.ToString();
-                BookCodeBorr_TxtBox.Text = Borrower_DGrid[4, e.RowIndex].Value.ToString();
                 Duration_TxtBox.Text = Borrower_DGrid[6, e.RowIndex].Value.ToString();
                 BorrowDate_DPIcker.Text = Borrower_DGrid[5, e.RowIndex].Value.ToString();
                 ReturnDate_DPicker.Text = Borrower_DGrid[7,e.RowIndex].Value.ToString();
-                
+                Description_RTxtBox.Text = Borrower_DGrid[9, e.RowIndex].Value.ToString();
             }
         }
 
@@ -354,6 +379,75 @@ namespace Library_Management
                 fetchBorrower();
             }
             else MessageBox.Show("Failure!!!", "Alert");
+        }
+
+        private void ClearBorrower_Btn_Click(object sender, EventArgs e)
+        {
+            IdCardBorr_txtBox.Text = "";
+            BookCodeBorr_TxtBox.Text = "";
+            BookCodeBorr_TxtBox.Text = "";
+            Duration_TxtBox.Text = "";
+            BorrowDate_DPIcker.Value = DateTime.Now;
+            ReturnDate_DPicker.Value = DateTime.Now;
+        }
+
+        private void AddLibrarian_Btn_Click(object sender, EventArgs e)
+        {
+            bool isSuccess = librarian.AddLibrarian(AddLIbrarian_TxtBox.Text,AddLiGender_TxtBox.Text, AddLiDoB_DPicker.Value, AddLiDiscription_TxtBox.Text);
+            if (isSuccess)
+            {
+                MessageBox.Show("Successful!!!", "Alert");
+               fetchLibrarian();
+            }
+            else MessageBox.Show("Failure!!!", "Alert");
+        }
+
+        private void AddUserLog_Btn_Click(object sender, EventArgs e)
+        {
+            bool isSuccess = userLogin.AddUserLogin(PasswordLog_TxtBox.Text, SetLibrarianID_TxtBox.Text, RoleLogin_Cbox.Text, StatusTxtBox_CBox.Text);
+            if (isSuccess)
+            {
+                MessageBox.Show("Successful!!!", "Alert");
+                fetchLibrarian();
+            }
+            else MessageBox.Show("Failure!!!", "Alert");
+        }
+
+        private void ClearLIbrarain_Btn_Click(object sender, EventArgs e)
+        {
+            AddLIbrarian_TxtBox.Text = "";
+            AddLiGender_TxtBox.Text = "";
+            AddLiDoB_DPicker.Value = DateTime.Now;
+            AddLiDiscription_TxtBox.Text = "";
+        }
+
+        private void ClearLogFrm_Btn_Click(object sender, EventArgs e)
+        {
+            PasswordLog_TxtBox.Text = "";
+            SetLibrarianID_TxtBox.Text = "";
+            RoleLogin_Cbox.Text = "";
+            StatusTxtBox_CBox.Text = "";
+        }
+
+        private void BlockUserLog_Btn_Click(object sender, EventArgs e)
+        {
+            bool isSuccess = userLogin.BlockUser(SetLibrarianID_TxtBox.Text);
+            if (isSuccess)
+            {
+                MessageBox.Show("Successful!!!", "Alert");
+                fetchLibrarian();
+            }
+            else MessageBox.Show("Failure!!!", "Alert");
+        }
+
+        private void UserManag_DGrid_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void UserMngFilter_Cbox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UserMng();
         }
     }
 }

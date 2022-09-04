@@ -157,7 +157,6 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.ClearLIbrarain_Btn = new System.Windows.Forms.Button();
             this.AddLibrarian_Btn = new System.Windows.Forms.Button();
-            this.AddLiGender_TxtBox = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.AddLiDiscription_TxtBox = new System.Windows.Forms.RichTextBox();
             this.AddLiDoB_DPicker = new System.Windows.Forms.DateTimePicker();
@@ -175,6 +174,7 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.AddLiGender_TxtBox = new System.Windows.Forms.ComboBox();
             this.UCheckIn_DGrid.SuspendLayout();
             this.User_CheckinTab.SuspendLayout();
             this.UCheckIn_Grid.SuspendLayout();
@@ -1485,9 +1485,9 @@
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Controls.Add(this.AddLiGender_TxtBox);
             this.groupBox5.Controls.Add(this.ClearLIbrarain_Btn);
             this.groupBox5.Controls.Add(this.AddLibrarian_Btn);
-            this.groupBox5.Controls.Add(this.AddLiGender_TxtBox);
             this.groupBox5.Controls.Add(this.label25);
             this.groupBox5.Controls.Add(this.AddLiDiscription_TxtBox);
             this.groupBox5.Controls.Add(this.AddLiDoB_DPicker);
@@ -1521,13 +1521,6 @@
             this.AddLibrarian_Btn.Text = "Add";
             this.AddLibrarian_Btn.UseVisualStyleBackColor = true;
             this.AddLibrarian_Btn.Click += new System.EventHandler(this.AddLibrarian_Btn_Click);
-            // 
-            // AddLiGender_TxtBox
-            // 
-            this.AddLiGender_TxtBox.Location = new System.Drawing.Point(132, 80);
-            this.AddLiGender_TxtBox.Name = "AddLiGender_TxtBox";
-            this.AddLiGender_TxtBox.Size = new System.Drawing.Size(280, 27);
-            this.AddLiGender_TxtBox.TabIndex = 34;
             // 
             // label25
             // 
@@ -1685,6 +1678,7 @@
             this.UserMng_TxtBox.Name = "UserMng_TxtBox";
             this.UserMng_TxtBox.Size = new System.Drawing.Size(259, 27);
             this.UserMng_TxtBox.TabIndex = 21;
+            this.UserMng_TxtBox.TextChanged += new System.EventHandler(this.UserMng_TxtBox_TextChanged);
             // 
             // label36
             // 
@@ -1749,6 +1743,18 @@
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // AddLiGender_TxtBox
+            // 
+            this.AddLiGender_TxtBox.FormattingEnabled = true;
+            this.AddLiGender_TxtBox.Items.AddRange(new object[] {
+            "M",
+            "F"});
+            this.AddLiGender_TxtBox.Location = new System.Drawing.Point(133, 80);
+            this.AddLiGender_TxtBox.Name = "AddLiGender_TxtBox";
+            this.AddLiGender_TxtBox.Size = new System.Drawing.Size(48, 28);
+            this.AddLiGender_TxtBox.TabIndex = 38;
+            this.AddLiGender_TxtBox.Text = "M";
             // 
             // MainForm
             // 
@@ -1906,7 +1912,6 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button ClearLIbrarain_Btn;
         private System.Windows.Forms.Button AddLibrarian_Btn;
-        private System.Windows.Forms.TextBox AddLiGender_TxtBox;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.RichTextBox AddLiDiscription_TxtBox;
         private System.Windows.Forms.DateTimePicker AddLiDoB_DPicker;
@@ -1947,5 +1952,6 @@
         private System.Windows.Forms.Button BorrReturned_Btn;
         private System.Windows.Forms.CheckBox Borrowing_CkBox;
         private System.Windows.Forms.ComboBox StatusTxtBox_CBox;
+        private System.Windows.Forms.ComboBox AddLiGender_TxtBox;
     }
 }

@@ -40,6 +40,7 @@ namespace Library_Management
         void fetchLibrarian()
         {
             Librarian_DGrid.DataSource = login.GetAllLibrarain();
+            
             DataTable LiRow = login.GetLibrarianDetail(DataContext.UserID);
             
             if(LiRow != null)
@@ -85,7 +86,6 @@ namespace Library_Management
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(DataContext.UserRole);
             if(DataContext.UserRole == "Admin")
             {
                 UserManag_Grid.Enabled = true;
@@ -393,21 +393,30 @@ namespace Library_Management
 
         private void AddLibrarian_Btn_Click(object sender, EventArgs e)
         {
+            if (AddLIbrarian_TxtBox.Text == "" && AddLiGender_TxtBox.Text == "")
+            {
+                return;
+            }
             bool isSuccess = librarian.AddLibrarian(AddLIbrarian_TxtBox.Text,AddLiGender_TxtBox.Text, AddLiDoB_DPicker.Value, AddLiDiscription_TxtBox.Text);
             if (isSuccess)
             {
                 MessageBox.Show("Successful!!!", "Alert");
-               fetchLibrarian();
+                UserManag_DGrid.DataSource = login.GetAllLibrarain();
+                fetchLibrarian();
             }
             else MessageBox.Show("Failure!!!", "Alert");
         }
 
         private void AddUserLog_Btn_Click(object sender, EventArgs e)
         {
+            if(PasswordLog_TxtBox.Text == "" && SetLibrarianID_TxtBox.Text == "" && RoleLogin_Cbox.Text == "" && StatusTxtBox_CBox.Text == ""){
+                return;
+            }
             bool isSuccess = userLogin.AddUserLogin(PasswordLog_TxtBox.Text, SetLibrarianID_TxtBox.Text, RoleLogin_Cbox.Text, StatusTxtBox_CBox.Text);
             if (isSuccess)
             {
                 MessageBox.Show("Successful!!!", "Alert");
+                fetchUserLogin();
                 fetchLibrarian();
             }
             else MessageBox.Show("Failure!!!", "Alert");
@@ -425,8 +434,8 @@ namespace Library_Management
         {
             PasswordLog_TxtBox.Text = "";
             SetLibrarianID_TxtBox.Text = "";
-            RoleLogin_Cbox.Text = "";
-            StatusTxtBox_CBox.Text = "";
+            RoleLogin_Cbox.Text = "User";
+            StatusTxtBox_CBox.Text = "Active";
         }
 
         private void BlockUserLog_Btn_Click(object sender, EventArgs e)
@@ -435,19 +444,82 @@ namespace Library_Management
             if (isSuccess)
             {
                 MessageBox.Show("Successful!!!", "Alert");
-                fetchLibrarian();
+                if (UserMngFilter_Cbox.Text == "User Login")
+                {
+                    fetchUserLogin();
+
+                }
+                else
+                {
+                    fetchLibrarian();
+                }    
             }
             else MessageBox.Show("Failure!!!", "Alert");
         }
 
         private void UserManag_DGrid_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (UserMngFilter_Cbox.Text == "User Login")
+            {
+                //BookCode_TxtBox.Text = Book_DGrid[0, e.RowIndex].Value.ToString();
+                SetLibrarianID_TxtBox.Text = UserManag_DGrid[0, e.RowIndex].Value.ToString();
+                PasswordLog_TxtBox.Text = UserManag_DGrid[1, e.RowIndex].Value.ToString();
+                RoleLogin_Cbox.Text = UserManag_DGrid[2, e.RowIndex].Value.ToString();
+                StatusTxtBox_CBox.Text = UserManag_DGrid[3, e.RowIndex].Value.ToString();
+            }
+            if(UserMngFilter_Cbox.Text == "Librarian")
+            {
+                AddLIbrarian_TxtBox.Text = UserManag_DGrid[1, e.RowIndex].Value.ToString();
+                AddLiGender_TxtBox.Text = UserManag_DGrid[2, e.RowIndex].Value.ToString();
+                AddLiDoB_DPicker.Text = UserManag_DGrid[3, e.RowIndex].Value.ToString();
+                AddLiDiscription_TxtBox.Text = UserManag_DGrid[4, e.RowIndex].Value.ToString();
+            }
         }
 
         private void UserMngFilter_Cbox_SelectedIndexChanged(object sender, EventArgs e)
         {
             UserMng();
+        }
+
+        private void UserMng_TxtBox_TextChanged(object sender, EventArgs e)
+        {
+            if(UserMngFilter_Cbox.Text == "Librarian")
+            {
+                DataTable dataTable;
+                dataTable = librarian.SearchLibrarian(UserMng_TxtBox.Text);
+                if (dataTable == null)
+                {
+                    UserManag_DGrid.DataSource = login.GetAllLibrarain();
+                    return;
+                }
+                if (dataTable.Rows.Count > 0)
+                {
+                    UserManag_DGrid.DataSource = dataTable;
+                }
+                else
+                {
+                    UserManag_DGrid.DataSource = login.GetAllLibrarain();
+                }
+            }
+
+            if(UserMngFilter_Cbox.Text == "User Login")
+            {
+                DataTable dataTable;
+                dataTable = userLogin.searchUserLogin(UserMng_TxtBox.Text);
+                if (dataTable == null)
+                {
+                    fetchUserLogin();
+                    return;
+                }
+                if (dataTable.Rows.Count > 0)
+                {
+                    UserManag_DGrid.DataSource = dataTable;
+                }
+                else
+                {
+                    fetchUserLogin();
+                }
+            }
         }
     }
 }

@@ -22,13 +22,14 @@ namespace Library_Management.MyController
             string returnString = "";
             if (myDatabase.getConnectionState() == "open")
             {
-
                 DataTable dt = myDatabase.getTable("select * from verifyLogin(" + Li_ID + ", '" + password + "')");
                 if (dt != null)
                 {
                     long rowNum = dt.Rows.Count;
-                    foreach (DataRow dr in dt.Rows)
+                    DataRow dr;
+                    for (int i = 0; i < rowNum; i++)
                     {
+                        dr = dt.Rows[i];
                         if (Li_ID == dr.ItemArray[0].ToString())
                         {
                             DataContext.UserID = dr.ItemArray[0].ToString();
@@ -38,18 +39,16 @@ namespace Library_Management.MyController
                                 {
                                     DataContext.UserRole = dr.ItemArray[2].ToString();
                                     returnString = "success";
+
                                 }
-                                else returnString = "User has been blocked!";
                             }
-                            else returnString = "Wrong password!";
                         }
-                        else returnString = "Wrong Username!";
                     }
                 }
-                else returnString = "error";
+                else { return "error"; }
             }
-            else returnString = "error";
-            return returnString;
+            else { return "error"; }
+            return returnString;     
         }
 
         public DataTable GetLibrarianDetail(string LiID)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace Library_Management.MyController
 {
@@ -21,6 +22,20 @@ namespace Library_Management.MyController
                 return myDatabase.ExecuteQuery($"exec sp_createLibrarian '{Li_Name}', '{Gender}','{DoB}','{Description}'");
             }
             return false;
+        }
+
+        public DataTable SearchLibrarian(string Li_ID)
+        {
+            if (myDatabase.getConnectionState() == "open")
+            {
+                DataTable dt = myDatabase.getTable("select * from Librarian where Li_ID = " + Li_ID + "");
+                if (dt != null)
+                {
+                    return dt;
+                }
+                else return null;
+            }
+            return null;
         }
     }
 }

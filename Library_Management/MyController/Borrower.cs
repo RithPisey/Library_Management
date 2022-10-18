@@ -9,7 +9,7 @@ namespace Library_Management.MyController
 {
     internal class Borrower
     {
-        Database myDatabase;
+        readonly Database myDatabase;
         public Borrower()
         {
             myDatabase = new Database();
@@ -77,6 +77,72 @@ namespace Library_Management.MyController
                 return myDatabase.ExecuteQuery(sql);
             }
             return false;
+        }
+
+        public DataTable FetchReturned()
+        {
+            if(myDatabase.getConnectionState() == "open")
+            {
+                return myDatabase.getTable("" +
+                    "select " +
+                    "UserVisited.Identity_Card," +
+                    "UserVisited.Name," +
+                    "Librarian.Li_Name," +
+                    "Book.Book_Code," +
+                    "Book.Book_Name," +
+                    "Borrow.Borrow_Date," +
+                    "Borrow.Duration," +
+                    "Borrow.Return_Date," +
+                    " Borrow.Status," +
+                    "Borrow.Description" +
+                    " from Borrow inner join " +
+                    "Librarian on Borrow.Li_ID = Librarian.Li_ID " +
+                    "inner join UserVisited " +
+                    "on Borrow.UserID = UserVisited.UserID " +
+                    "inner join Book on Book.Book_ID = Borrow.Book_ID where Borrow.Status = 'Returned'");
+            }
+            return null;
+        }
+
+        public DataTable FetchBorrowing()
+        {
+
+            if (myDatabase.getConnectionState() == "open")
+            {
+                return myDatabase.getTable("" +
+                    "select " +
+                    "UserVisited.Identity_Card," +
+                    "UserVisited.Name," +
+                    "Librarian.Li_Name," +
+                    "Book.Book_Code," +
+                    "Book.Book_Name," +
+                    "Borrow.Borrow_Date," +
+                    "Borrow.Duration," +
+                    "Borrow.Return_Date," +
+                    " Borrow.Status," +
+                    "Borrow.Description" +
+                    " from Borrow inner join " +
+                    "Librarian on Borrow.Li_ID = Librarian.Li_ID " +
+                    "inner join UserVisited " +
+                    "on Borrow.UserID = UserVisited.UserID " +
+                    "inner join Book on Book.Book_ID = Borrow.Book_ID where Borrow.Status = 'Borrowing'");
+            }
+            return null;
+        }
+
+        public DataTable SearchReturnedUser(string IdentityCard)
+        {
+
+            if (myDatabase.getConnectionState() == "open")
+            {
+                DataTable dt = myDatabase.getTable($"select * from [fn_seacherBorrower]({IdentityCard}, 'Returned')");
+                if (dt != null)
+                {
+                    return dt;
+                }
+                else return null;
+            }
+            return null;
         }
     }
 }

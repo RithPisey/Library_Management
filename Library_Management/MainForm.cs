@@ -296,7 +296,8 @@ namespace Library_Management
         void searchBorrower()
         {
             DataTable dataTable;
-            if (Borrowing_CkBox.Checked)
+            
+            if (Borrower_filter_Cbox.Text == "Borrowing")
             {
                 dataTable = borrower.SearchBorrowingUser(SearchBorr_TxtBox.Text);
                 if (dataTable == null)
@@ -304,24 +305,16 @@ namespace Library_Management
                     fetchBorrower();
                     return;
                 }
-                else if (dataTable.Rows.Count > 0)
+                else if (dataTable.Rows.Count >= 0)
                 {
                     Borrower_DGrid.DataSource = dataTable;
                 }
                 else
                 {
                     fetchBorrower();
-                }
-                try
-                {
-                  
-                }
-                catch(Exception ex)
-                {
-                    fetchBorrower();
-                }             
+                }     
             }
-            else
+            else if(Borrower_filter_Cbox.Text == "All")
             {
                 try
                 {
@@ -344,7 +337,85 @@ namespace Library_Management
                 {
                     fetchUserVistor();
                 }
-            }   
+            }
+             if(Borrower_filter_Cbox.Text == "Returned")
+            {
+                try
+                {
+                   
+                    dataTable = borrower.SearchReturnedUser(SearchBorr_TxtBox.Text);
+                    if (dataTable == null)
+                    {
+                        fetchBorrower();
+                        return;
+                    }
+                    else if (dataTable.Rows.Count > 0)
+                    {
+                        Borrower_DGrid.DataSource = dataTable;
+                    }
+                    else
+                    {
+                        fetchBorrower();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    fetchUserVistor();
+                }
+            } 
+        }
+
+        void filterBorrower()
+        {
+            DataTable dataTable;
+            if (Borrower_filter_Cbox.Text == "Returned")
+            {
+                try
+                {
+                    dataTable = borrower.FetchReturned();
+                    if (dataTable == null)
+                    {
+                        //MessageBox.Show(dataTable.Rows.Count.ToString());
+                        fetchBorrower();
+                        return;
+                    }
+                    else if (dataTable.Rows.Count > 0)
+                    {
+                        Borrower_DGrid.DataSource = dataTable;
+                    }
+                    else
+                    {
+                        fetchBorrower();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    fetchBorrower();
+                }
+            }
+            else if(Borrower_filter_Cbox.Text == "Borrowing")
+            {
+                dataTable = borrower.FetchBorrowing();
+                if (dataTable == null)
+                {
+                    fetchBorrower();
+                    return;
+                }
+                else if (dataTable.Rows.Count >= 0)
+                {
+                    //MessageBox.Show(dataTable.Rows.Count.ToString());
+                    Borrower_DGrid.DataSource = dataTable;
+                }
+                else
+                {
+                    MessageBox.Show(dataTable.Rows.Count.ToString());
+                    fetchBorrower();
+                }
+            }
+            else if (Borrower_filter_Cbox.Text == "All")
+            {
+                fetchBorrower();
+            }
         }
         private void SearchBorr_TxtBox_TextChanged(object sender, EventArgs e)
         {
@@ -533,6 +604,11 @@ namespace Library_Management
             {
                 ReturnDate_DPicker.Value = BorrowDate_DPIcker.Value.AddDays(double.Parse(Duration_TxtBox.Text));
             }
+        }
+
+        private void Borrower_filter_Cbox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            filterBorrower();
         }
     }
 }

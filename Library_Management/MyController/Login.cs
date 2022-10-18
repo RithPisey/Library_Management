@@ -74,8 +74,8 @@ namespace Library_Management.MyController
            
             if (myDatabase.getConnectionState() == "open")
             {
-                DataTable dt = myDatabase.getTable($" select *" +
-                    $" from Librarian");
+                string AllLi = "select * from Librarian where Librarian.Status = 'Active'";
+                DataTable dt = myDatabase.getTable(AllLi);
                 if (dt != null)
                 {
                     return dt;

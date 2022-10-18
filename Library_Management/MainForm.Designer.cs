@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -80,6 +81,7 @@
             this.Librarian_Lb = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.ClearBorrower_Btn = new System.Windows.Forms.Button();
+            this.Duration_TxtBox = new System.Windows.Forms.ComboBox();
             this.BorrowDate_DPIcker = new System.Windows.Forms.DateTimePicker();
             this.ReturnDate_DPicker = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
@@ -91,7 +93,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.AddBorrower_Btn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Borrowing_CkBox = new System.Windows.Forms.CheckBox();
+            this.Borrow_Filter_Lb = new System.Windows.Forms.Label();
+            this.Borrower_filter_Cbox = new System.Windows.Forms.ComboBox();
             this.SearchBorr_Btn = new System.Windows.Forms.Button();
             this.SearchBorr_TxtBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -174,7 +177,6 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.Duration_TxtBox = new System.Windows.Forms.ComboBox();
             this.UCheckIn_DGrid.SuspendLayout();
             this.User_CheckinTab.SuspendLayout();
             this.UCheckIn_Grid.SuspendLayout();
@@ -221,19 +223,21 @@
             this.UCheckIn_DGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UCheckIn_DGrid.HotTrack = true;
             this.UCheckIn_DGrid.Location = new System.Drawing.Point(0, 0);
+            this.UCheckIn_DGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.UCheckIn_DGrid.Name = "UCheckIn_DGrid";
             this.UCheckIn_DGrid.SelectedIndex = 0;
-            this.UCheckIn_DGrid.Size = new System.Drawing.Size(961, 464);
+            this.UCheckIn_DGrid.Size = new System.Drawing.Size(1902, 1033);
             this.UCheckIn_DGrid.TabIndex = 0;
             // 
             // User_CheckinTab
             // 
             this.User_CheckinTab.Controls.Add(this.UCheckIn_Grid);
             this.User_CheckinTab.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.User_CheckinTab.Location = new System.Drawing.Point(4, 24);
+            this.User_CheckinTab.Location = new System.Drawing.Point(4, 29);
+            this.User_CheckinTab.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.User_CheckinTab.Name = "User_CheckinTab";
-            this.User_CheckinTab.Padding = new System.Windows.Forms.Padding(3);
-            this.User_CheckinTab.Size = new System.Drawing.Size(953, 436);
+            this.User_CheckinTab.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.User_CheckinTab.Size = new System.Drawing.Size(1894, 1000);
             this.User_CheckinTab.TabIndex = 0;
             this.User_CheckinTab.Text = "User Check-In";
             this.User_CheckinTab.UseVisualStyleBackColor = true;
@@ -241,19 +245,20 @@
             // UCheckIn_Grid
             // 
             this.UCheckIn_Grid.ColumnCount = 2;
-            this.UCheckIn_Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.14391F));
-            this.UCheckIn_Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.85609F));
+            this.UCheckIn_Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.72881F));
+            this.UCheckIn_Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.27119F));
             this.UCheckIn_Grid.Controls.Add(this.groupBox1, 0, 1);
             this.UCheckIn_Grid.Controls.Add(this.UCheckedIn_DGrid, 1, 0);
             this.UCheckIn_Grid.Controls.Add(this.panel1, 0, 0);
             this.UCheckIn_Grid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UCheckIn_Grid.Location = new System.Drawing.Point(3, 3);
+            this.UCheckIn_Grid.Location = new System.Drawing.Point(3, 4);
+            this.UCheckIn_Grid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.UCheckIn_Grid.Name = "UCheckIn_Grid";
             this.UCheckIn_Grid.RowCount = 2;
-            this.UCheckIn_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.63148F));
-            this.UCheckIn_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.36852F));
-            this.UCheckIn_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.UCheckIn_Grid.Size = new System.Drawing.Size(947, 430);
+            this.UCheckIn_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.56452F));
+            this.UCheckIn_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 79.43549F));
+            this.UCheckIn_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.UCheckIn_Grid.Size = new System.Drawing.Size(1888, 992);
             this.UCheckIn_Grid.TabIndex = 0;
             // 
             // groupBox1
@@ -272,11 +277,9 @@
             this.groupBox1.Controls.Add(this.IdCard_Txtbox);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.Add_Btn);
-            this.groupBox1.Location = new System.Drawing.Point(3, 146);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Location = new System.Drawing.Point(3, 207);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(383, 282);
+            this.groupBox1.Size = new System.Drawing.Size(441, 782);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Visitor Form";
@@ -287,21 +290,18 @@
             this.groupBox7.Controls.Add(this.CheckOutUser_Btn);
             this.groupBox7.Controls.Add(this.DateOut_DPicker);
             this.groupBox7.Controls.Add(this.label5);
-            this.groupBox7.Location = new System.Drawing.Point(22, 175);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox7.Location = new System.Drawing.Point(25, 233);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox7.Size = new System.Drawing.Size(336, 94);
+            this.groupBox7.Size = new System.Drawing.Size(384, 125);
             this.groupBox7.TabIndex = 31;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Check Out";
             // 
             // TimeNowUVisitor_Btn
             // 
-            this.TimeNowUVisitor_Btn.Location = new System.Drawing.Point(276, 28);
-            this.TimeNowUVisitor_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TimeNowUVisitor_Btn.Location = new System.Drawing.Point(315, 37);
             this.TimeNowUVisitor_Btn.Name = "TimeNowUVisitor_Btn";
-            this.TimeNowUVisitor_Btn.Size = new System.Drawing.Size(56, 22);
+            this.TimeNowUVisitor_Btn.Size = new System.Drawing.Size(64, 29);
             this.TimeNowUVisitor_Btn.TabIndex = 34;
             this.TimeNowUVisitor_Btn.Text = "Now";
             this.TimeNowUVisitor_Btn.UseVisualStyleBackColor = true;
@@ -309,10 +309,9 @@
             // 
             // CheckOutUser_Btn
             // 
-            this.CheckOutUser_Btn.Location = new System.Drawing.Point(87, 61);
-            this.CheckOutUser_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CheckOutUser_Btn.Location = new System.Drawing.Point(99, 81);
             this.CheckOutUser_Btn.Name = "CheckOutUser_Btn";
-            this.CheckOutUser_Btn.Size = new System.Drawing.Size(243, 22);
+            this.CheckOutUser_Btn.Size = new System.Drawing.Size(278, 29);
             this.CheckOutUser_Btn.TabIndex = 33;
             this.CheckOutUser_Btn.Text = "Check Out";
             this.CheckOutUser_Btn.UseVisualStyleBackColor = true;
@@ -322,27 +321,25 @@
             // 
             this.DateOut_DPicker.CustomFormat = "dd/MM/yyy hh:mm:ss tt";
             this.DateOut_DPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateOut_DPicker.Location = new System.Drawing.Point(87, 28);
-            this.DateOut_DPicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DateOut_DPicker.Location = new System.Drawing.Point(99, 37);
             this.DateOut_DPicker.Name = "DateOut_DPicker";
-            this.DateOut_DPicker.Size = new System.Drawing.Size(185, 23);
+            this.DateOut_DPicker.Size = new System.Drawing.Size(211, 27);
             this.DateOut_DPicker.TabIndex = 32;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 32);
+            this.label5.Location = new System.Drawing.Point(7, 43);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 15);
+            this.label5.Size = new System.Drawing.Size(69, 20);
             this.label5.TabIndex = 31;
             this.label5.Text = "Date Out";
             // 
             // Clear_Btn
             // 
-            this.Clear_Btn.Location = new System.Drawing.Point(190, 148);
-            this.Clear_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Clear_Btn.Location = new System.Drawing.Point(217, 197);
             this.Clear_Btn.Name = "Clear_Btn";
-            this.Clear_Btn.Size = new System.Drawing.Size(82, 22);
+            this.Clear_Btn.Size = new System.Drawing.Size(94, 29);
             this.Clear_Btn.TabIndex = 28;
             this.Clear_Btn.Text = "Clear";
             this.Clear_Btn.UseVisualStyleBackColor = true;
@@ -356,80 +353,75 @@
             "Teacher",
             "Visitor",
             "Other"});
-            this.Role_Cbox.Location = new System.Drawing.Point(102, 95);
-            this.Role_Cbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Role_Cbox.Location = new System.Drawing.Point(117, 127);
             this.Role_Cbox.Name = "Role_Cbox";
-            this.Role_Cbox.Size = new System.Drawing.Size(250, 23);
+            this.Role_Cbox.Size = new System.Drawing.Size(285, 28);
             this.Role_Cbox.TabIndex = 27;
             // 
             // DateIn_DPicker
             // 
             this.DateIn_DPicker.CustomFormat = "dd/MM/yyy hh:mm:ss tt";
             this.DateIn_DPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateIn_DPicker.Location = new System.Drawing.Point(102, 122);
-            this.DateIn_DPicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DateIn_DPicker.Location = new System.Drawing.Point(117, 163);
             this.DateIn_DPicker.Name = "DateIn_DPicker";
-            this.DateIn_DPicker.Size = new System.Drawing.Size(250, 23);
+            this.DateIn_DPicker.Size = new System.Drawing.Size(285, 27);
             this.DateIn_DPicker.TabIndex = 26;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(41, 126);
+            this.label4.Location = new System.Drawing.Point(47, 168);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 15);
+            this.label4.Size = new System.Drawing.Size(57, 20);
             this.label4.TabIndex = 23;
             this.label4.Text = "Date in";
             // 
             // Name_TxtBox
             // 
-            this.Name_TxtBox.Location = new System.Drawing.Point(101, 67);
-            this.Name_TxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name_TxtBox.Location = new System.Drawing.Point(115, 89);
             this.Name_TxtBox.Name = "Name_TxtBox";
-            this.Name_TxtBox.Size = new System.Drawing.Size(252, 23);
+            this.Name_TxtBox.Size = new System.Drawing.Size(287, 27);
             this.Name_TxtBox.TabIndex = 22;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(57, 98);
+            this.label3.Location = new System.Drawing.Point(65, 131);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 15);
+            this.label3.Size = new System.Drawing.Size(39, 20);
             this.label3.TabIndex = 21;
             this.label3.Text = "Role";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(48, 67);
+            this.label2.Location = new System.Drawing.Point(55, 89);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 15);
+            this.label2.Size = new System.Drawing.Size(49, 20);
             this.label2.TabIndex = 20;
             this.label2.Text = "Name";
             // 
             // IdCard_Txtbox
             // 
-            this.IdCard_Txtbox.Location = new System.Drawing.Point(101, 38);
-            this.IdCard_Txtbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.IdCard_Txtbox.Location = new System.Drawing.Point(115, 51);
             this.IdCard_Txtbox.Name = "IdCard_Txtbox";
-            this.IdCard_Txtbox.Size = new System.Drawing.Size(252, 23);
+            this.IdCard_Txtbox.Size = new System.Drawing.Size(287, 27);
             this.IdCard_Txtbox.TabIndex = 19;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 40);
+            this.label1.Location = new System.Drawing.Point(10, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 15);
+            this.label1.Size = new System.Drawing.Size(94, 20);
             this.label1.TabIndex = 18;
             this.label1.Text = "Identity Card";
             // 
             // Add_Btn
             // 
-            this.Add_Btn.Location = new System.Drawing.Point(102, 148);
-            this.Add_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Add_Btn.Location = new System.Drawing.Point(117, 197);
             this.Add_Btn.Name = "Add_Btn";
-            this.Add_Btn.Size = new System.Drawing.Size(82, 22);
+            this.Add_Btn.Size = new System.Drawing.Size(94, 29);
             this.Add_Btn.TabIndex = 17;
             this.Add_Btn.Text = "Add";
             this.Add_Btn.UseVisualStyleBackColor = true;
@@ -459,7 +451,8 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.UCheckedIn_DGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.UCheckedIn_DGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UCheckedIn_DGrid.Location = new System.Drawing.Point(392, 3);
+            this.UCheckedIn_DGrid.Location = new System.Drawing.Point(450, 4);
+            this.UCheckedIn_DGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.UCheckedIn_DGrid.MultiSelect = false;
             this.UCheckedIn_DGrid.Name = "UCheckedIn_DGrid";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -474,7 +467,7 @@
             this.UCheckIn_Grid.SetRowSpan(this.UCheckedIn_DGrid, 2);
             this.UCheckedIn_DGrid.RowTemplate.Height = 25;
             this.UCheckedIn_DGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.UCheckedIn_DGrid.Size = new System.Drawing.Size(552, 424);
+            this.UCheckedIn_DGrid.Size = new System.Drawing.Size(1435, 984);
             this.UCheckedIn_DGrid.TabIndex = 0;
             this.UCheckedIn_DGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UCheckedIn_DGrid_CellClick);
             // 
@@ -489,10 +482,9 @@
             this.panel1.Controls.Add(this.SearchUser_TxtBox);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(3, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(383, 140);
+            this.panel1.Size = new System.Drawing.Size(441, 198);
             this.panel1.TabIndex = 1;
             // 
             // UnCheckOut_ChBox
@@ -500,10 +492,9 @@
             this.UnCheckOut_ChBox.AutoSize = true;
             this.UnCheckOut_ChBox.Checked = true;
             this.UnCheckOut_ChBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.UnCheckOut_ChBox.Location = new System.Drawing.Point(60, 117);
-            this.UnCheckOut_ChBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.UnCheckOut_ChBox.Location = new System.Drawing.Point(69, 156);
             this.UnCheckOut_ChBox.Name = "UnCheckOut_ChBox";
-            this.UnCheckOut_ChBox.Size = new System.Drawing.Size(93, 19);
+            this.UnCheckOut_ChBox.Size = new System.Drawing.Size(112, 24);
             this.UnCheckOut_ChBox.TabIndex = 33;
             this.UnCheckOut_ChBox.Text = "Uncheck out";
             this.UnCheckOut_ChBox.UseVisualStyleBackColor = true;
@@ -514,18 +505,17 @@
             this.userTime_Lb.AutoSize = true;
             this.userTime_Lb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.userTime_Lb.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.userTime_Lb.Location = new System.Drawing.Point(102, 28);
+            this.userTime_Lb.Location = new System.Drawing.Point(117, 37);
             this.userTime_Lb.Name = "userTime_Lb";
-            this.userTime_Lb.Size = new System.Drawing.Size(88, 30);
+            this.userTime_Lb.Size = new System.Drawing.Size(105, 37);
             this.userTime_Lb.TabIndex = 32;
             this.userTime_Lb.Text = "00:00:00";
             // 
             // SearchUser_Btn
             // 
-            this.SearchUser_Btn.Location = new System.Drawing.Point(290, 89);
-            this.SearchUser_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SearchUser_Btn.Location = new System.Drawing.Point(331, 119);
             this.SearchUser_Btn.Name = "SearchUser_Btn";
-            this.SearchUser_Btn.Size = new System.Drawing.Size(82, 22);
+            this.SearchUser_Btn.Size = new System.Drawing.Size(94, 29);
             this.SearchUser_Btn.TabIndex = 19;
             this.SearchUser_Btn.Text = "Search";
             this.SearchUser_Btn.UseVisualStyleBackColor = true;
@@ -533,28 +523,28 @@
             // 
             // SearchUser_TxtBox
             // 
-            this.SearchUser_TxtBox.Location = new System.Drawing.Point(60, 90);
-            this.SearchUser_TxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SearchUser_TxtBox.Location = new System.Drawing.Point(69, 120);
             this.SearchUser_TxtBox.Name = "SearchUser_TxtBox";
-            this.SearchUser_TxtBox.Size = new System.Drawing.Size(224, 23);
+            this.SearchUser_TxtBox.Size = new System.Drawing.Size(255, 27);
             this.SearchUser_TxtBox.TabIndex = 18;
             this.SearchUser_TxtBox.TextChanged += new System.EventHandler(this.SearchUser_TxtBox_TextChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 92);
+            this.label6.Location = new System.Drawing.Point(10, 123);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 15);
+            this.label6.Size = new System.Drawing.Size(53, 20);
             this.label6.TabIndex = 17;
             this.label6.Text = "Search";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Library_Management.Properties.Resources._01;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 3);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(10, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 74);
+            this.pictureBox1.Size = new System.Drawing.Size(91, 99);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -562,10 +552,11 @@
             // Borrower_Tab
             // 
             this.Borrower_Tab.Controls.Add(this.Borrower_Grid);
-            this.Borrower_Tab.Location = new System.Drawing.Point(4, 24);
+            this.Borrower_Tab.Location = new System.Drawing.Point(4, 29);
+            this.Borrower_Tab.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Borrower_Tab.Name = "Borrower_Tab";
-            this.Borrower_Tab.Padding = new System.Windows.Forms.Padding(3);
-            this.Borrower_Tab.Size = new System.Drawing.Size(953, 436);
+            this.Borrower_Tab.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Borrower_Tab.Size = new System.Drawing.Size(1894, 1000);
             this.Borrower_Tab.TabIndex = 1;
             this.Borrower_Tab.Text = "Borrower";
             this.Borrower_Tab.UseVisualStyleBackColor = true;
@@ -573,20 +564,21 @@
             // Borrower_Grid
             // 
             this.Borrower_Grid.ColumnCount = 2;
-            this.Borrower_Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.0369F));
-            this.Borrower_Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.9631F));
+            this.Borrower_Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.25212F));
+            this.Borrower_Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.74788F));
             this.Borrower_Grid.Controls.Add(this.groupBox2, 0, 1);
             this.Borrower_Grid.Controls.Add(this.panel2, 0, 0);
             this.Borrower_Grid.Controls.Add(this.Borrower_DGrid, 1, 0);
             this.Borrower_Grid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Borrower_Grid.Location = new System.Drawing.Point(3, 3);
+            this.Borrower_Grid.Location = new System.Drawing.Point(3, 4);
+            this.Borrower_Grid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Borrower_Grid.Name = "Borrower_Grid";
             this.Borrower_Grid.RowCount = 2;
-            this.Borrower_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.91003F));
-            this.Borrower_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.08997F));
+            this.Borrower_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.40322F));
+            this.Borrower_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 74.59677F));
+            this.Borrower_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.Borrower_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.Borrower_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
-            this.Borrower_Grid.Size = new System.Drawing.Size(947, 430);
+            this.Borrower_Grid.Size = new System.Drawing.Size(1888, 992);
             this.Borrower_Grid.TabIndex = 0;
             // 
             // groupBox2
@@ -611,22 +603,20 @@
             this.groupBox2.Controls.Add(this.IdCardBorr_txtBox);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.AddBorrower_Btn);
-            this.groupBox2.Location = new System.Drawing.Point(3, 147);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Location = new System.Drawing.Point(3, 254);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(373, 281);
+            this.groupBox2.Size = new System.Drawing.Size(433, 735);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Borrower Form";
             // 
             // BorrReturned_Btn
             // 
-            this.BorrReturned_Btn.BackColor = System.Drawing.Color.IndianRed;
-            this.BorrReturned_Btn.Location = new System.Drawing.Point(276, 245);
-            this.BorrReturned_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BorrReturned_Btn.BackColor = System.Drawing.Color.Firebrick;
+            this.BorrReturned_Btn.ForeColor = System.Drawing.SystemColors.Control;
+            this.BorrReturned_Btn.Location = new System.Drawing.Point(315, 327);
             this.BorrReturned_Btn.Name = "BorrReturned_Btn";
-            this.BorrReturned_Btn.Size = new System.Drawing.Size(82, 22);
+            this.BorrReturned_Btn.Size = new System.Drawing.Size(94, 29);
             this.BorrReturned_Btn.TabIndex = 33;
             this.BorrReturned_Btn.Text = "Returned";
             this.BorrReturned_Btn.UseVisualStyleBackColor = false;
@@ -635,134 +625,136 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(24, 197);
+            this.label14.Location = new System.Drawing.Point(27, 263);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(67, 15);
+            this.label14.Size = new System.Drawing.Size(85, 20);
             this.label14.TabIndex = 32;
             this.label14.Text = "Description";
             // 
             // Description_RTxtBox
             // 
-            this.Description_RTxtBox.Location = new System.Drawing.Point(113, 195);
-            this.Description_RTxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Description_RTxtBox.Location = new System.Drawing.Point(129, 260);
             this.Description_RTxtBox.Name = "Description_RTxtBox";
-            this.Description_RTxtBox.Size = new System.Drawing.Size(246, 47);
+            this.Description_RTxtBox.Size = new System.Drawing.Size(281, 61);
             this.Description_RTxtBox.TabIndex = 31;
             this.Description_RTxtBox.Text = "";
             // 
             // Librarian_Lb
             // 
             this.Librarian_Lb.AutoSize = true;
-            this.Librarian_Lb.Location = new System.Drawing.Point(113, 25);
+            this.Librarian_Lb.Location = new System.Drawing.Point(129, 33);
             this.Librarian_Lb.Name = "Librarian_Lb";
-            this.Librarian_Lb.Size = new System.Drawing.Size(22, 15);
+            this.Librarian_Lb.Size = new System.Drawing.Size(27, 20);
             this.Librarian_Lb.TabIndex = 30;
             this.Librarian_Lb.Text = "---";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(40, 25);
+            this.label13.Location = new System.Drawing.Point(46, 33);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(56, 15);
+            this.label13.Size = new System.Drawing.Size(70, 20);
             this.label13.TabIndex = 29;
             this.label13.Text = "LIbrarian:";
             // 
             // ClearBorrower_Btn
             // 
-            this.ClearBorrower_Btn.Location = new System.Drawing.Point(192, 245);
-            this.ClearBorrower_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ClearBorrower_Btn.Location = new System.Drawing.Point(219, 327);
             this.ClearBorrower_Btn.Name = "ClearBorrower_Btn";
-            this.ClearBorrower_Btn.Size = new System.Drawing.Size(82, 22);
+            this.ClearBorrower_Btn.Size = new System.Drawing.Size(94, 29);
             this.ClearBorrower_Btn.TabIndex = 28;
             this.ClearBorrower_Btn.Text = "Clear";
             this.ClearBorrower_Btn.UseVisualStyleBackColor = true;
             this.ClearBorrower_Btn.Click += new System.EventHandler(this.ClearBorrower_Btn_Click);
             // 
+            // Duration_TxtBox
+            // 
+            this.Duration_TxtBox.FormattingEnabled = true;
+            this.Duration_TxtBox.Location = new System.Drawing.Point(131, 145);
+            this.Duration_TxtBox.Name = "Duration_TxtBox";
+            this.Duration_TxtBox.Size = new System.Drawing.Size(278, 28);
+            this.Duration_TxtBox.TabIndex = 27;
+            this.Duration_TxtBox.TextChanged += new System.EventHandler(this.Duration_TxtBox_TextChanged);
+            // 
             // BorrowDate_DPIcker
             // 
-            this.BorrowDate_DPIcker.Location = new System.Drawing.Point(115, 136);
-            this.BorrowDate_DPIcker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BorrowDate_DPIcker.Location = new System.Drawing.Point(131, 181);
             this.BorrowDate_DPIcker.Name = "BorrowDate_DPIcker";
-            this.BorrowDate_DPIcker.Size = new System.Drawing.Size(244, 23);
+            this.BorrowDate_DPIcker.Size = new System.Drawing.Size(278, 27);
             this.BorrowDate_DPIcker.TabIndex = 26;
             // 
             // ReturnDate_DPicker
             // 
             this.ReturnDate_DPicker.Enabled = false;
-            this.ReturnDate_DPicker.Location = new System.Drawing.Point(115, 164);
-            this.ReturnDate_DPicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ReturnDate_DPicker.Location = new System.Drawing.Point(131, 219);
             this.ReturnDate_DPicker.Name = "ReturnDate_DPicker";
-            this.ReturnDate_DPicker.Size = new System.Drawing.Size(244, 23);
+            this.ReturnDate_DPicker.Size = new System.Drawing.Size(278, 27);
             this.ReturnDate_DPicker.TabIndex = 25;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(22, 168);
+            this.label8.Location = new System.Drawing.Point(25, 224);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(69, 15);
+            this.label8.Size = new System.Drawing.Size(88, 20);
             this.label8.TabIndex = 24;
             this.label8.Text = "Return Date";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(18, 141);
+            this.label9.Location = new System.Drawing.Point(21, 188);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 15);
+            this.label9.Size = new System.Drawing.Size(93, 20);
             this.label9.TabIndex = 23;
             this.label9.Text = "Borrow Date";
             // 
             // BookCodeBorr_TxtBox
             // 
-            this.BookCodeBorr_TxtBox.Location = new System.Drawing.Point(113, 80);
-            this.BookCodeBorr_TxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BookCodeBorr_TxtBox.Location = new System.Drawing.Point(129, 107);
             this.BookCodeBorr_TxtBox.Name = "BookCodeBorr_TxtBox";
-            this.BookCodeBorr_TxtBox.Size = new System.Drawing.Size(246, 23);
+            this.BookCodeBorr_TxtBox.Size = new System.Drawing.Size(281, 27);
             this.BookCodeBorr_TxtBox.TabIndex = 22;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(40, 111);
+            this.label10.Location = new System.Drawing.Point(46, 148);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 15);
+            this.label10.Size = new System.Drawing.Size(67, 20);
             this.label10.TabIndex = 21;
             this.label10.Text = "Duration";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(25, 82);
+            this.label11.Location = new System.Drawing.Point(29, 109);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(67, 15);
+            this.label11.Size = new System.Drawing.Size(84, 20);
             this.label11.TabIndex = 20;
             this.label11.Text = "Book_Code";
             // 
             // IdCardBorr_txtBox
             // 
-            this.IdCardBorr_txtBox.Location = new System.Drawing.Point(113, 52);
-            this.IdCardBorr_txtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.IdCardBorr_txtBox.Location = new System.Drawing.Point(129, 69);
             this.IdCardBorr_txtBox.Name = "IdCardBorr_txtBox";
-            this.IdCardBorr_txtBox.Size = new System.Drawing.Size(246, 23);
+            this.IdCardBorr_txtBox.Size = new System.Drawing.Size(281, 27);
             this.IdCardBorr_txtBox.TabIndex = 19;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(17, 54);
+            this.label12.Location = new System.Drawing.Point(19, 72);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(75, 15);
+            this.label12.Size = new System.Drawing.Size(94, 20);
             this.label12.TabIndex = 18;
             this.label12.Text = "Identity Card";
             // 
             // AddBorrower_Btn
             // 
-            this.AddBorrower_Btn.Location = new System.Drawing.Point(104, 245);
-            this.AddBorrower_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AddBorrower_Btn.Location = new System.Drawing.Point(119, 327);
             this.AddBorrower_Btn.Name = "AddBorrower_Btn";
-            this.AddBorrower_Btn.Size = new System.Drawing.Size(82, 22);
+            this.AddBorrower_Btn.Size = new System.Drawing.Size(94, 29);
             this.AddBorrower_Btn.TabIndex = 17;
             this.AddBorrower_Btn.Text = "Add";
             this.AddBorrower_Btn.UseVisualStyleBackColor = true;
@@ -770,37 +762,46 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.Borrowing_CkBox);
+            this.panel2.Controls.Add(this.Borrow_Filter_Lb);
+            this.panel2.Controls.Add(this.Borrower_filter_Cbox);
             this.panel2.Controls.Add(this.SearchBorr_Btn);
             this.panel2.Controls.Add(this.SearchBorr_TxtBox);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 2);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(373, 141);
+            this.panel2.Size = new System.Drawing.Size(433, 245);
             this.panel2.TabIndex = 2;
             // 
-            // Borrowing_CkBox
+            // Borrow_Filter_Lb
             // 
-            this.Borrowing_CkBox.AutoSize = true;
-            this.Borrowing_CkBox.Checked = true;
-            this.Borrowing_CkBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.Borrowing_CkBox.Location = new System.Drawing.Point(68, 117);
-            this.Borrowing_CkBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Borrowing_CkBox.Name = "Borrowing_CkBox";
-            this.Borrowing_CkBox.Size = new System.Drawing.Size(81, 19);
-            this.Borrowing_CkBox.TabIndex = 34;
-            this.Borrowing_CkBox.Text = "Borrowing";
-            this.Borrowing_CkBox.UseVisualStyleBackColor = true;
+            this.Borrow_Filter_Lb.AutoSize = true;
+            this.Borrow_Filter_Lb.Location = new System.Drawing.Point(8, 167);
+            this.Borrow_Filter_Lb.Name = "Borrow_Filter_Lb";
+            this.Borrow_Filter_Lb.Size = new System.Drawing.Size(55, 20);
+            this.Borrow_Filter_Lb.TabIndex = 36;
+            this.Borrow_Filter_Lb.Text = "Filters: ";
+            // 
+            // Borrower_filter_Cbox
+            // 
+            this.Borrower_filter_Cbox.FormattingEnabled = true;
+            this.Borrower_filter_Cbox.Items.AddRange(new object[] {
+            "All",
+            "Borrowing",
+            "Returned"});
+            this.Borrower_filter_Cbox.Location = new System.Drawing.Point(64, 167);
+            this.Borrower_filter_Cbox.Name = "Borrower_filter_Cbox";
+            this.Borrower_filter_Cbox.Size = new System.Drawing.Size(129, 28);
+            this.Borrower_filter_Cbox.TabIndex = 35;
+            this.Borrower_filter_Cbox.Text = "All";
+            this.Borrower_filter_Cbox.SelectedIndexChanged += new System.EventHandler(this.Borrower_filter_Cbox_SelectedIndexChanged);
             // 
             // SearchBorr_Btn
             // 
-            this.SearchBorr_Btn.Location = new System.Drawing.Point(290, 92);
-            this.SearchBorr_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SearchBorr_Btn.Location = new System.Drawing.Point(329, 131);
             this.SearchBorr_Btn.Name = "SearchBorr_Btn";
-            this.SearchBorr_Btn.Size = new System.Drawing.Size(82, 22);
+            this.SearchBorr_Btn.Size = new System.Drawing.Size(94, 29);
             this.SearchBorr_Btn.TabIndex = 19;
             this.SearchBorr_Btn.Text = "Search";
             this.SearchBorr_Btn.UseVisualStyleBackColor = true;
@@ -808,28 +809,28 @@
             // 
             // SearchBorr_TxtBox
             // 
-            this.SearchBorr_TxtBox.Location = new System.Drawing.Point(68, 92);
-            this.SearchBorr_TxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SearchBorr_TxtBox.Location = new System.Drawing.Point(64, 131);
             this.SearchBorr_TxtBox.Name = "SearchBorr_TxtBox";
-            this.SearchBorr_TxtBox.Size = new System.Drawing.Size(218, 23);
+            this.SearchBorr_TxtBox.Size = new System.Drawing.Size(261, 27);
             this.SearchBorr_TxtBox.TabIndex = 18;
             this.SearchBorr_TxtBox.TextChanged += new System.EventHandler(this.SearchBorr_TxtBox_TextChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 94);
+            this.label7.Location = new System.Drawing.Point(8, 133);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 15);
+            this.label7.Size = new System.Drawing.Size(53, 20);
             this.label7.TabIndex = 17;
             this.label7.Text = "Search";
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Library_Management.Properties.Resources._01;
-            this.pictureBox2.Location = new System.Drawing.Point(126, 8);
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(144, 11);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 79);
+            this.pictureBox2.Size = new System.Drawing.Size(114, 105);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
@@ -855,7 +856,8 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.Borrower_DGrid.DefaultCellStyle = dataGridViewCellStyle5;
             this.Borrower_DGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Borrower_DGrid.Location = new System.Drawing.Point(382, 3);
+            this.Borrower_DGrid.Location = new System.Drawing.Point(442, 4);
+            this.Borrower_DGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Borrower_DGrid.Name = "Borrower_DGrid";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
@@ -868,16 +870,17 @@
             this.Borrower_DGrid.RowHeadersWidth = 51;
             this.Borrower_Grid.SetRowSpan(this.Borrower_DGrid, 2);
             this.Borrower_DGrid.RowTemplate.Height = 25;
-            this.Borrower_DGrid.Size = new System.Drawing.Size(562, 424);
+            this.Borrower_DGrid.Size = new System.Drawing.Size(1443, 984);
             this.Borrower_DGrid.TabIndex = 1;
             this.Borrower_DGrid.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Borrower_DGrid_CellEnter);
             // 
             // Book_Tab
             // 
             this.Book_Tab.Controls.Add(this.Book_Grid);
-            this.Book_Tab.Location = new System.Drawing.Point(4, 24);
+            this.Book_Tab.Location = new System.Drawing.Point(4, 29);
+            this.Book_Tab.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Book_Tab.Name = "Book_Tab";
-            this.Book_Tab.Size = new System.Drawing.Size(953, 436);
+            this.Book_Tab.Size = new System.Drawing.Size(1894, 1000);
             this.Book_Tab.TabIndex = 2;
             this.Book_Tab.Text = "Book";
             this.Book_Tab.UseVisualStyleBackColor = true;
@@ -885,19 +888,20 @@
             // Book_Grid
             // 
             this.Book_Grid.ColumnCount = 2;
-            this.Book_Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.45872F));
-            this.Book_Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.54128F));
+            this.Book_Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.75924F));
+            this.Book_Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.24076F));
             this.Book_Grid.Controls.Add(this.groupBox3, 0, 1);
             this.Book_Grid.Controls.Add(this.panel3, 0, 0);
             this.Book_Grid.Controls.Add(this.Book_DGrid, 1, 0);
             this.Book_Grid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Book_Grid.Location = new System.Drawing.Point(0, 0);
+            this.Book_Grid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Book_Grid.Name = "Book_Grid";
             this.Book_Grid.RowCount = 2;
-            this.Book_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.7645F));
-            this.Book_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.2355F));
-            this.Book_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.Book_Grid.Size = new System.Drawing.Size(953, 436);
+            this.Book_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.1F));
+            this.Book_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78.9F));
+            this.Book_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.Book_Grid.Size = new System.Drawing.Size(1894, 1000);
             this.Book_Grid.TabIndex = 1;
             // 
             // groupBox3
@@ -921,72 +925,65 @@
             this.groupBox3.Controls.Add(this.BookCode_TxtBox);
             this.groupBox3.Controls.Add(this.label23);
             this.groupBox3.Controls.Add(this.AddBook_Btn);
-            this.groupBox3.Location = new System.Drawing.Point(3, 144);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Location = new System.Drawing.Point(3, 214);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(379, 290);
+            this.groupBox3.Size = new System.Drawing.Size(444, 783);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Book";
             // 
             // BookLang_TxtBox
             // 
-            this.BookLang_TxtBox.Location = new System.Drawing.Point(115, 143);
-            this.BookLang_TxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BookLang_TxtBox.Location = new System.Drawing.Point(131, 191);
             this.BookLang_TxtBox.Name = "BookLang_TxtBox";
-            this.BookLang_TxtBox.Size = new System.Drawing.Size(246, 23);
+            this.BookLang_TxtBox.Size = new System.Drawing.Size(281, 27);
             this.BookLang_TxtBox.TabIndex = 36;
             // 
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(34, 146);
+            this.label37.Location = new System.Drawing.Point(39, 195);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(59, 15);
+            this.label37.Size = new System.Drawing.Size(74, 20);
             this.label37.TabIndex = 35;
             this.label37.Text = "Language";
             // 
             // Author_TxtBox
             // 
-            this.Author_TxtBox.Location = new System.Drawing.Point(115, 88);
-            this.Author_TxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Author_TxtBox.Location = new System.Drawing.Point(131, 117);
             this.Author_TxtBox.Name = "Author_TxtBox";
-            this.Author_TxtBox.Size = new System.Drawing.Size(246, 23);
+            this.Author_TxtBox.Size = new System.Drawing.Size(281, 27);
             this.Author_TxtBox.TabIndex = 34;
             // 
             // Page_TxtBox
             // 
-            this.Page_TxtBox.Location = new System.Drawing.Point(115, 118);
-            this.Page_TxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Page_TxtBox.Location = new System.Drawing.Point(131, 157);
             this.Page_TxtBox.Name = "Page_TxtBox";
-            this.Page_TxtBox.Size = new System.Drawing.Size(246, 23);
+            this.Page_TxtBox.Size = new System.Drawing.Size(281, 27);
             this.Page_TxtBox.TabIndex = 33;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(24, 204);
+            this.label16.Location = new System.Drawing.Point(27, 272);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(67, 15);
+            this.label16.Size = new System.Drawing.Size(85, 20);
             this.label16.TabIndex = 32;
             this.label16.Text = "Description";
             // 
             // BookDesc_RTxtBox
             // 
-            this.BookDesc_RTxtBox.Location = new System.Drawing.Point(115, 202);
-            this.BookDesc_RTxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BookDesc_RTxtBox.Location = new System.Drawing.Point(131, 269);
             this.BookDesc_RTxtBox.Name = "BookDesc_RTxtBox";
-            this.BookDesc_RTxtBox.Size = new System.Drawing.Size(246, 47);
+            this.BookDesc_RTxtBox.Size = new System.Drawing.Size(281, 61);
             this.BookDesc_RTxtBox.TabIndex = 31;
             this.BookDesc_RTxtBox.Text = "";
             // 
             // ClearBook_Btn
             // 
-            this.ClearBook_Btn.Location = new System.Drawing.Point(202, 256);
-            this.ClearBook_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ClearBook_Btn.Location = new System.Drawing.Point(231, 341);
             this.ClearBook_Btn.Name = "ClearBook_Btn";
-            this.ClearBook_Btn.Size = new System.Drawing.Size(82, 22);
+            this.ClearBook_Btn.Size = new System.Drawing.Size(94, 29);
             this.ClearBook_Btn.TabIndex = 28;
             this.ClearBook_Btn.Text = "Clear";
             this.ClearBook_Btn.UseVisualStyleBackColor = true;
@@ -994,79 +991,75 @@
             // 
             // Publish_DPicker
             // 
-            this.Publish_DPicker.Location = new System.Drawing.Point(115, 171);
-            this.Publish_DPicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Publish_DPicker.Location = new System.Drawing.Point(131, 228);
             this.Publish_DPicker.Name = "Publish_DPicker";
-            this.Publish_DPicker.Size = new System.Drawing.Size(244, 23);
+            this.Publish_DPicker.Size = new System.Drawing.Size(278, 27);
             this.Publish_DPicker.TabIndex = 25;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(22, 175);
+            this.label19.Location = new System.Drawing.Point(25, 233);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(70, 15);
+            this.label19.Size = new System.Drawing.Size(88, 20);
             this.label19.TabIndex = 24;
             this.label19.Text = "Publsh Date";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(63, 121);
+            this.label20.Location = new System.Drawing.Point(72, 161);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(33, 15);
+            this.label20.Size = new System.Drawing.Size(41, 20);
             this.label20.TabIndex = 23;
             this.label20.Text = "Page";
             // 
             // BookName_TxtBox
             // 
-            this.BookName_TxtBox.Location = new System.Drawing.Point(115, 60);
-            this.BookName_TxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BookName_TxtBox.Location = new System.Drawing.Point(131, 80);
             this.BookName_TxtBox.Name = "BookName_TxtBox";
-            this.BookName_TxtBox.Size = new System.Drawing.Size(246, 23);
+            this.BookName_TxtBox.Size = new System.Drawing.Size(281, 27);
             this.BookName_TxtBox.TabIndex = 22;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(52, 91);
+            this.label21.Location = new System.Drawing.Point(59, 121);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(44, 15);
+            this.label21.Size = new System.Drawing.Size(54, 20);
             this.label21.TabIndex = 21;
             this.label21.Text = "Author";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(23, 62);
+            this.label22.Location = new System.Drawing.Point(26, 83);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(69, 15);
+            this.label22.Size = new System.Drawing.Size(87, 20);
             this.label22.TabIndex = 20;
             this.label22.Text = "Book Name";
             // 
             // BookCode_TxtBox
             // 
-            this.BookCode_TxtBox.Location = new System.Drawing.Point(115, 32);
-            this.BookCode_TxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BookCode_TxtBox.Location = new System.Drawing.Point(131, 43);
             this.BookCode_TxtBox.Name = "BookCode_TxtBox";
-            this.BookCode_TxtBox.Size = new System.Drawing.Size(246, 23);
+            this.BookCode_TxtBox.Size = new System.Drawing.Size(281, 27);
             this.BookCode_TxtBox.TabIndex = 19;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(27, 34);
+            this.label23.Location = new System.Drawing.Point(31, 45);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(65, 15);
+            this.label23.Size = new System.Drawing.Size(82, 20);
             this.label23.TabIndex = 18;
             this.label23.Text = "Book Code";
             // 
             // AddBook_Btn
             // 
-            this.AddBook_Btn.Location = new System.Drawing.Point(115, 256);
-            this.AddBook_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AddBook_Btn.Location = new System.Drawing.Point(131, 341);
             this.AddBook_Btn.Name = "AddBook_Btn";
-            this.AddBook_Btn.Size = new System.Drawing.Size(82, 22);
+            this.AddBook_Btn.Size = new System.Drawing.Size(94, 29);
             this.AddBook_Btn.TabIndex = 17;
             this.AddBook_Btn.Text = "Add";
             this.AddBook_Btn.UseVisualStyleBackColor = true;
@@ -1079,18 +1072,16 @@
             this.panel3.Controls.Add(this.label15);
             this.panel3.Controls.Add(this.pictureBox3);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 2);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(379, 138);
+            this.panel3.Size = new System.Drawing.Size(444, 205);
             this.panel3.TabIndex = 3;
             // 
             // SearchBook_Btn
             // 
-            this.SearchBook_Btn.Location = new System.Drawing.Point(290, 108);
-            this.SearchBook_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SearchBook_Btn.Location = new System.Drawing.Point(331, 144);
             this.SearchBook_Btn.Name = "SearchBook_Btn";
-            this.SearchBook_Btn.Size = new System.Drawing.Size(82, 22);
+            this.SearchBook_Btn.Size = new System.Drawing.Size(94, 29);
             this.SearchBook_Btn.TabIndex = 19;
             this.SearchBook_Btn.Text = "Search";
             this.SearchBook_Btn.UseVisualStyleBackColor = true;
@@ -1098,28 +1089,28 @@
             // 
             // SearchBook_TxtBox
             // 
-            this.SearchBook_TxtBox.Location = new System.Drawing.Point(60, 109);
-            this.SearchBook_TxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SearchBook_TxtBox.Location = new System.Drawing.Point(69, 145);
             this.SearchBook_TxtBox.Name = "SearchBook_TxtBox";
-            this.SearchBook_TxtBox.Size = new System.Drawing.Size(227, 23);
+            this.SearchBook_TxtBox.Size = new System.Drawing.Size(259, 27);
             this.SearchBook_TxtBox.TabIndex = 18;
             this.SearchBook_TxtBox.TextChanged += new System.EventHandler(this.SearchBook_TxtBox_TextChanged);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(12, 111);
+            this.label15.Location = new System.Drawing.Point(14, 148);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(42, 15);
+            this.label15.Size = new System.Drawing.Size(53, 20);
             this.label15.TabIndex = 17;
             this.label15.Text = "Search";
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::Library_Management.Properties.Resources._01;
-            this.pictureBox3.Location = new System.Drawing.Point(128, 5);
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(146, 7);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(113, 97);
+            this.pictureBox3.Size = new System.Drawing.Size(129, 129);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
@@ -1145,7 +1136,8 @@
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.Book_DGrid.DefaultCellStyle = dataGridViewCellStyle8;
             this.Book_DGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Book_DGrid.Location = new System.Drawing.Point(388, 3);
+            this.Book_DGrid.Location = new System.Drawing.Point(453, 4);
+            this.Book_DGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Book_DGrid.Name = "Book_DGrid";
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
@@ -1158,16 +1150,17 @@
             this.Book_DGrid.RowHeadersWidth = 51;
             this.Book_Grid.SetRowSpan(this.Book_DGrid, 2);
             this.Book_DGrid.RowTemplate.Height = 25;
-            this.Book_DGrid.Size = new System.Drawing.Size(562, 430);
+            this.Book_DGrid.Size = new System.Drawing.Size(1438, 992);
             this.Book_DGrid.TabIndex = 1;
             this.Book_DGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Book_DGrid_CellClick);
             // 
             // Librarian_Tab
             // 
             this.Librarian_Tab.Controls.Add(this.Librarian_Grid);
-            this.Librarian_Tab.Location = new System.Drawing.Point(4, 24);
+            this.Librarian_Tab.Location = new System.Drawing.Point(4, 29);
+            this.Librarian_Tab.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Librarian_Tab.Name = "Librarian_Tab";
-            this.Librarian_Tab.Size = new System.Drawing.Size(953, 436);
+            this.Librarian_Tab.Size = new System.Drawing.Size(1894, 1000);
             this.Librarian_Tab.TabIndex = 3;
             this.Librarian_Tab.Text = "Librarain";
             this.Librarian_Tab.UseVisualStyleBackColor = true;
@@ -1175,19 +1168,20 @@
             // Librarian_Grid
             // 
             this.Librarian_Grid.ColumnCount = 2;
-            this.Librarian_Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.55046F));
-            this.Librarian_Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.44954F));
+            this.Librarian_Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.65364F));
+            this.Librarian_Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.34636F));
             this.Librarian_Grid.Controls.Add(this.groupBox4, 0, 1);
             this.Librarian_Grid.Controls.Add(this.panel4, 0, 0);
             this.Librarian_Grid.Controls.Add(this.Librarian_DGrid, 1, 1);
             this.Librarian_Grid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Librarian_Grid.Location = new System.Drawing.Point(0, 0);
+            this.Librarian_Grid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Librarian_Grid.Name = "Librarian_Grid";
             this.Librarian_Grid.RowCount = 2;
-            this.Librarian_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.88737F));
-            this.Librarian_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.11263F));
-            this.Librarian_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.Librarian_Grid.Size = new System.Drawing.Size(953, 436);
+            this.Librarian_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.8F));
+            this.Librarian_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.2F));
+            this.Librarian_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.Librarian_Grid.Size = new System.Drawing.Size(1894, 1000);
             this.Librarian_Grid.TabIndex = 1;
             // 
             // groupBox4
@@ -1205,11 +1199,9 @@
             this.groupBox4.Controls.Add(this.LibrarianName_TxtBox);
             this.groupBox4.Controls.Add(this.label26);
             this.groupBox4.Controls.Add(this.label27);
-            this.groupBox4.Location = new System.Drawing.Point(3, 136);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox4.Location = new System.Drawing.Point(3, 181);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox4.Size = new System.Drawing.Size(380, 298);
+            this.groupBox4.Size = new System.Drawing.Size(441, 816);
             this.groupBox4.TabIndex = 23;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Current User";
@@ -1217,91 +1209,86 @@
             // LiID_TxtBox
             // 
             this.LiID_TxtBox.Enabled = false;
-            this.LiID_TxtBox.Location = new System.Drawing.Point(116, 31);
-            this.LiID_TxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LiID_TxtBox.Location = new System.Drawing.Point(133, 41);
             this.LiID_TxtBox.Name = "LiID_TxtBox";
-            this.LiID_TxtBox.Size = new System.Drawing.Size(246, 23);
+            this.LiID_TxtBox.Size = new System.Drawing.Size(281, 27);
             this.LiID_TxtBox.TabIndex = 36;
             // 
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(79, 33);
+            this.label33.Location = new System.Drawing.Point(90, 44);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(18, 15);
+            this.label33.Size = new System.Drawing.Size(24, 20);
             this.label33.TabIndex = 35;
             this.label33.Text = "ID";
             // 
             // LiGender_TxtBox
             // 
             this.LiGender_TxtBox.Enabled = false;
-            this.LiGender_TxtBox.Location = new System.Drawing.Point(116, 84);
-            this.LiGender_TxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LiGender_TxtBox.Location = new System.Drawing.Point(133, 112);
             this.LiGender_TxtBox.Name = "LiGender_TxtBox";
-            this.LiGender_TxtBox.Size = new System.Drawing.Size(246, 23);
+            this.LiGender_TxtBox.Size = new System.Drawing.Size(281, 27);
             this.LiGender_TxtBox.TabIndex = 34;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(25, 148);
+            this.label18.Location = new System.Drawing.Point(29, 197);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(67, 15);
+            this.label18.Size = new System.Drawing.Size(85, 20);
             this.label18.TabIndex = 32;
             this.label18.Text = "Description";
             // 
             // Li_Description_RTxtBox
             // 
             this.Li_Description_RTxtBox.Enabled = false;
-            this.Li_Description_RTxtBox.Location = new System.Drawing.Point(116, 146);
-            this.Li_Description_RTxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Li_Description_RTxtBox.Location = new System.Drawing.Point(133, 195);
             this.Li_Description_RTxtBox.Name = "Li_Description_RTxtBox";
-            this.Li_Description_RTxtBox.Size = new System.Drawing.Size(246, 47);
+            this.Li_Description_RTxtBox.Size = new System.Drawing.Size(281, 61);
             this.Li_Description_RTxtBox.TabIndex = 31;
             this.Li_Description_RTxtBox.Text = "";
             // 
             // LiDoB_DPicker
             // 
             this.LiDoB_DPicker.Enabled = false;
-            this.LiDoB_DPicker.Location = new System.Drawing.Point(116, 116);
-            this.LiDoB_DPicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LiDoB_DPicker.Location = new System.Drawing.Point(133, 155);
             this.LiDoB_DPicker.Name = "LiDoB_DPicker";
-            this.LiDoB_DPicker.Size = new System.Drawing.Size(244, 23);
+            this.LiDoB_DPicker.Size = new System.Drawing.Size(278, 27);
             this.LiDoB_DPicker.TabIndex = 25;
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(18, 119);
+            this.label24.Location = new System.Drawing.Point(21, 159);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(73, 15);
+            this.label24.Size = new System.Drawing.Size(94, 20);
             this.label24.TabIndex = 24;
             this.label24.Text = "Date of Birth";
             // 
             // LibrarianName_TxtBox
             // 
             this.LibrarianName_TxtBox.Enabled = false;
-            this.LibrarianName_TxtBox.Location = new System.Drawing.Point(116, 56);
-            this.LibrarianName_TxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LibrarianName_TxtBox.Location = new System.Drawing.Point(133, 75);
             this.LibrarianName_TxtBox.Name = "LibrarianName_TxtBox";
-            this.LibrarianName_TxtBox.Size = new System.Drawing.Size(246, 23);
+            this.LibrarianName_TxtBox.Size = new System.Drawing.Size(281, 27);
             this.LibrarianName_TxtBox.TabIndex = 22;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(50, 86);
+            this.label26.Location = new System.Drawing.Point(57, 115);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(45, 15);
+            this.label26.Size = new System.Drawing.Size(57, 20);
             this.label26.TabIndex = 21;
             this.label26.Text = "Gender";
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(5, 58);
+            this.label27.Location = new System.Drawing.Point(6, 77);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(88, 15);
+            this.label27.Size = new System.Drawing.Size(111, 20);
             this.label27.TabIndex = 20;
             this.label27.Text = "Librarian Name";
             // 
@@ -1311,28 +1298,28 @@
             this.panel4.Controls.Add(this.label17);
             this.panel4.Controls.Add(this.pictureBox4);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(3, 2);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(947, 130);
+            this.panel4.Size = new System.Drawing.Size(1888, 172);
             this.panel4.TabIndex = 4;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label17.Location = new System.Drawing.Point(181, 44);
+            this.label17.Location = new System.Drawing.Point(207, 59);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(569, 54);
+            this.label17.Size = new System.Drawing.Size(705, 67);
             this.label17.TabIndex = 19;
             this.label17.Text = "Cambodian Mekong University";
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::Library_Management.Properties.Resources._01;
-            this.pictureBox4.Location = new System.Drawing.Point(39, 17);
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(45, 23);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(113, 97);
+            this.pictureBox4.Size = new System.Drawing.Size(129, 129);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 5;
             this.pictureBox4.TabStop = false;
@@ -1343,21 +1330,21 @@
             this.Librarian_DGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Librarian_DGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Librarian_DGrid.Enabled = false;
-            this.Librarian_DGrid.Location = new System.Drawing.Point(389, 136);
-            this.Librarian_DGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Librarian_DGrid.Location = new System.Drawing.Point(450, 181);
             this.Librarian_DGrid.Name = "Librarian_DGrid";
             this.Librarian_DGrid.RowHeadersWidth = 51;
             this.Librarian_DGrid.RowTemplate.Height = 29;
-            this.Librarian_DGrid.Size = new System.Drawing.Size(561, 298);
+            this.Librarian_DGrid.Size = new System.Drawing.Size(1441, 816);
             this.Librarian_DGrid.TabIndex = 24;
             this.Librarian_DGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Librarian_DGrid_CellContentClick);
             // 
             // User_MagTab
             // 
             this.User_MagTab.Controls.Add(this.UserManag_Grid);
-            this.User_MagTab.Location = new System.Drawing.Point(4, 24);
+            this.User_MagTab.Location = new System.Drawing.Point(4, 29);
+            this.User_MagTab.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.User_MagTab.Name = "User_MagTab";
-            this.User_MagTab.Size = new System.Drawing.Size(953, 436);
+            this.User_MagTab.Size = new System.Drawing.Size(1894, 1000);
             this.User_MagTab.TabIndex = 4;
             this.User_MagTab.Text = "User Management";
             this.User_MagTab.UseVisualStyleBackColor = true;
@@ -1365,19 +1352,20 @@
             // UserManag_Grid
             // 
             this.UserManag_Grid.ColumnCount = 2;
-            this.UserManag_Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.17431F));
-            this.UserManag_Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.82569F));
+            this.UserManag_Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.38965F));
+            this.UserManag_Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.61035F));
             this.UserManag_Grid.Controls.Add(this.groupBox6, 0, 1);
             this.UserManag_Grid.Controls.Add(this.groupBox5, 0, 0);
             this.UserManag_Grid.Controls.Add(this.tableLayoutPanel1, 1, 0);
             this.UserManag_Grid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UserManag_Grid.Location = new System.Drawing.Point(0, 0);
+            this.UserManag_Grid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.UserManag_Grid.Name = "UserManag_Grid";
             this.UserManag_Grid.RowCount = 2;
-            this.UserManag_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.UserManag_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.UserManag_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.UserManag_Grid.Size = new System.Drawing.Size(953, 436);
+            this.UserManag_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.4F));
+            this.UserManag_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 68.6F));
+            this.UserManag_Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.UserManag_Grid.Size = new System.Drawing.Size(1894, 1000);
             this.UserManag_Grid.TabIndex = 1;
             // 
             // groupBox6
@@ -1396,11 +1384,9 @@
             this.groupBox6.Controls.Add(this.label32);
             this.groupBox6.Controls.Add(this.SetLibrarianID_TxtBox);
             this.groupBox6.Controls.Add(this.label34);
-            this.groupBox6.Location = new System.Drawing.Point(3, 220);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox6.Location = new System.Drawing.Point(3, 317);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox6.Size = new System.Drawing.Size(367, 214);
+            this.groupBox6.Size = new System.Drawing.Size(436, 680);
             this.groupBox6.TabIndex = 25;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Add User Login";
@@ -1411,10 +1397,9 @@
             this.StatusTxtBox_CBox.Items.AddRange(new object[] {
             "Active",
             "Blocked"});
-            this.StatusTxtBox_CBox.Location = new System.Drawing.Point(116, 126);
-            this.StatusTxtBox_CBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.StatusTxtBox_CBox.Location = new System.Drawing.Point(133, 168);
             this.StatusTxtBox_CBox.Name = "StatusTxtBox_CBox";
-            this.StatusTxtBox_CBox.Size = new System.Drawing.Size(243, 23);
+            this.StatusTxtBox_CBox.Size = new System.Drawing.Size(277, 28);
             this.StatusTxtBox_CBox.TabIndex = 44;
             this.StatusTxtBox_CBox.Tag = "";
             this.StatusTxtBox_CBox.Text = "Active";
@@ -1425,27 +1410,25 @@
             this.RoleLogin_Cbox.Items.AddRange(new object[] {
             "User",
             "Admin"});
-            this.RoleLogin_Cbox.Location = new System.Drawing.Point(116, 96);
-            this.RoleLogin_Cbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.RoleLogin_Cbox.Location = new System.Drawing.Point(133, 128);
             this.RoleLogin_Cbox.Name = "RoleLogin_Cbox";
-            this.RoleLogin_Cbox.Size = new System.Drawing.Size(243, 23);
+            this.RoleLogin_Cbox.Size = new System.Drawing.Size(277, 28);
             this.RoleLogin_Cbox.TabIndex = 43;
             this.RoleLogin_Cbox.Text = "User";
             // 
             // PasswordLog_TxtBox
             // 
-            this.PasswordLog_TxtBox.Location = new System.Drawing.Point(116, 62);
-            this.PasswordLog_TxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PasswordLog_TxtBox.Location = new System.Drawing.Point(133, 83);
             this.PasswordLog_TxtBox.Name = "PasswordLog_TxtBox";
-            this.PasswordLog_TxtBox.Size = new System.Drawing.Size(246, 23);
+            this.PasswordLog_TxtBox.Size = new System.Drawing.Size(281, 27);
             this.PasswordLog_TxtBox.TabIndex = 42;
             // 
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(55, 128);
+            this.label35.Location = new System.Drawing.Point(63, 171);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(39, 15);
+            this.label35.Size = new System.Drawing.Size(49, 20);
             this.label35.TabIndex = 41;
             this.label35.Text = "Status";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1453,18 +1436,17 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(64, 100);
+            this.label31.Location = new System.Drawing.Point(73, 133);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(30, 15);
+            this.label31.Size = new System.Drawing.Size(39, 20);
             this.label31.TabIndex = 40;
             this.label31.Text = "Role";
             // 
             // ClearLogFrm_Btn
             // 
-            this.ClearLogFrm_Btn.Location = new System.Drawing.Point(189, 156);
-            this.ClearLogFrm_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ClearLogFrm_Btn.Location = new System.Drawing.Point(216, 208);
             this.ClearLogFrm_Btn.Name = "ClearLogFrm_Btn";
-            this.ClearLogFrm_Btn.Size = new System.Drawing.Size(82, 22);
+            this.ClearLogFrm_Btn.Size = new System.Drawing.Size(94, 29);
             this.ClearLogFrm_Btn.TabIndex = 37;
             this.ClearLogFrm_Btn.Text = "Clear";
             this.ClearLogFrm_Btn.UseVisualStyleBackColor = true;
@@ -1472,21 +1454,21 @@
             // 
             // BlockUserLog_Btn
             // 
-            this.BlockUserLog_Btn.Location = new System.Drawing.Point(276, 156);
-            this.BlockUserLog_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BlockUserLog_Btn.BackColor = System.Drawing.Color.Firebrick;
+            this.BlockUserLog_Btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.BlockUserLog_Btn.Location = new System.Drawing.Point(315, 208);
             this.BlockUserLog_Btn.Name = "BlockUserLog_Btn";
-            this.BlockUserLog_Btn.Size = new System.Drawing.Size(82, 22);
+            this.BlockUserLog_Btn.Size = new System.Drawing.Size(94, 29);
             this.BlockUserLog_Btn.TabIndex = 36;
             this.BlockUserLog_Btn.Text = "Block";
-            this.BlockUserLog_Btn.UseVisualStyleBackColor = true;
+            this.BlockUserLog_Btn.UseVisualStyleBackColor = false;
             this.BlockUserLog_Btn.Click += new System.EventHandler(this.BlockUserLog_Btn_Click);
             // 
             // AddUserLog_Btn
             // 
-            this.AddUserLog_Btn.Location = new System.Drawing.Point(102, 156);
-            this.AddUserLog_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AddUserLog_Btn.Location = new System.Drawing.Point(117, 208);
             this.AddUserLog_Btn.Name = "AddUserLog_Btn";
-            this.AddUserLog_Btn.Size = new System.Drawing.Size(82, 22);
+            this.AddUserLog_Btn.Size = new System.Drawing.Size(94, 29);
             this.AddUserLog_Btn.TabIndex = 35;
             this.AddUserLog_Btn.Text = "Add";
             this.AddUserLog_Btn.UseVisualStyleBackColor = true;
@@ -1495,26 +1477,25 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(37, 64);
+            this.label32.Location = new System.Drawing.Point(42, 85);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(57, 15);
+            this.label32.Size = new System.Drawing.Size(70, 20);
             this.label32.TabIndex = 24;
             this.label32.Text = "Password";
             // 
             // SetLibrarianID_TxtBox
             // 
-            this.SetLibrarianID_TxtBox.Location = new System.Drawing.Point(116, 32);
-            this.SetLibrarianID_TxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SetLibrarianID_TxtBox.Location = new System.Drawing.Point(133, 43);
             this.SetLibrarianID_TxtBox.Name = "SetLibrarianID_TxtBox";
-            this.SetLibrarianID_TxtBox.Size = new System.Drawing.Size(246, 23);
+            this.SetLibrarianID_TxtBox.Size = new System.Drawing.Size(281, 27);
             this.SetLibrarianID_TxtBox.TabIndex = 22;
             // 
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(23, 34);
+            this.label34.Location = new System.Drawing.Point(26, 45);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(67, 15);
+            this.label34.Size = new System.Drawing.Size(86, 20);
             this.label34.TabIndex = 20;
             this.label34.Text = "Librarain ID";
             // 
@@ -1533,11 +1514,9 @@
             this.groupBox5.Controls.Add(this.AddLIbrarian_TxtBox);
             this.groupBox5.Controls.Add(this.label29);
             this.groupBox5.Controls.Add(this.label30);
-            this.groupBox5.Location = new System.Drawing.Point(3, 2);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox5.Location = new System.Drawing.Point(3, 3);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox5.Size = new System.Drawing.Size(367, 214);
+            this.groupBox5.Size = new System.Drawing.Size(436, 308);
             this.groupBox5.TabIndex = 24;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Add Librarian";
@@ -1548,19 +1527,17 @@
             this.AddLiGender_TxtBox.Items.AddRange(new object[] {
             "M",
             "F"});
-            this.AddLiGender_TxtBox.Location = new System.Drawing.Point(116, 60);
-            this.AddLiGender_TxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AddLiGender_TxtBox.Location = new System.Drawing.Point(133, 80);
             this.AddLiGender_TxtBox.Name = "AddLiGender_TxtBox";
-            this.AddLiGender_TxtBox.Size = new System.Drawing.Size(42, 23);
+            this.AddLiGender_TxtBox.Size = new System.Drawing.Size(47, 28);
             this.AddLiGender_TxtBox.TabIndex = 38;
             this.AddLiGender_TxtBox.Text = "M";
             // 
             // ClearLIbrarain_Btn
             // 
-            this.ClearLIbrarain_Btn.Location = new System.Drawing.Point(189, 182);
-            this.ClearLIbrarain_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ClearLIbrarain_Btn.Location = new System.Drawing.Point(216, 243);
             this.ClearLIbrarain_Btn.Name = "ClearLIbrarain_Btn";
-            this.ClearLIbrarain_Btn.Size = new System.Drawing.Size(82, 22);
+            this.ClearLIbrarain_Btn.Size = new System.Drawing.Size(94, 29);
             this.ClearLIbrarain_Btn.TabIndex = 37;
             this.ClearLIbrarain_Btn.Text = "Clear";
             this.ClearLIbrarain_Btn.UseVisualStyleBackColor = true;
@@ -1568,10 +1545,9 @@
             // 
             // AddLibrarian_Btn
             // 
-            this.AddLibrarian_Btn.Location = new System.Drawing.Point(102, 182);
-            this.AddLibrarian_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AddLibrarian_Btn.Location = new System.Drawing.Point(117, 243);
             this.AddLibrarian_Btn.Name = "AddLibrarian_Btn";
-            this.AddLibrarian_Btn.Size = new System.Drawing.Size(82, 22);
+            this.AddLibrarian_Btn.Size = new System.Drawing.Size(94, 29);
             this.AddLibrarian_Btn.TabIndex = 35;
             this.AddLibrarian_Btn.Text = "Add";
             this.AddLibrarian_Btn.UseVisualStyleBackColor = true;
@@ -1580,61 +1556,58 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(25, 124);
+            this.label25.Location = new System.Drawing.Point(29, 165);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(67, 15);
+            this.label25.Size = new System.Drawing.Size(85, 20);
             this.label25.TabIndex = 32;
             this.label25.Text = "Description";
             // 
             // AddLiDiscription_TxtBox
             // 
-            this.AddLiDiscription_TxtBox.Location = new System.Drawing.Point(116, 122);
-            this.AddLiDiscription_TxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AddLiDiscription_TxtBox.Location = new System.Drawing.Point(133, 163);
             this.AddLiDiscription_TxtBox.Name = "AddLiDiscription_TxtBox";
-            this.AddLiDiscription_TxtBox.Size = new System.Drawing.Size(246, 47);
+            this.AddLiDiscription_TxtBox.Size = new System.Drawing.Size(281, 61);
             this.AddLiDiscription_TxtBox.TabIndex = 31;
             this.AddLiDiscription_TxtBox.Text = "";
             // 
             // AddLiDoB_DPicker
             // 
-            this.AddLiDoB_DPicker.Location = new System.Drawing.Point(116, 92);
-            this.AddLiDoB_DPicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AddLiDoB_DPicker.Location = new System.Drawing.Point(133, 123);
             this.AddLiDoB_DPicker.Name = "AddLiDoB_DPicker";
-            this.AddLiDoB_DPicker.Size = new System.Drawing.Size(244, 23);
+            this.AddLiDoB_DPicker.Size = new System.Drawing.Size(278, 27);
             this.AddLiDoB_DPicker.TabIndex = 25;
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(18, 95);
+            this.label28.Location = new System.Drawing.Point(21, 127);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(73, 15);
+            this.label28.Size = new System.Drawing.Size(94, 20);
             this.label28.TabIndex = 24;
             this.label28.Text = "Date of Birth";
             // 
             // AddLIbrarian_TxtBox
             // 
-            this.AddLIbrarian_TxtBox.Location = new System.Drawing.Point(116, 32);
-            this.AddLIbrarian_TxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AddLIbrarian_TxtBox.Location = new System.Drawing.Point(133, 43);
             this.AddLIbrarian_TxtBox.Name = "AddLIbrarian_TxtBox";
-            this.AddLIbrarian_TxtBox.Size = new System.Drawing.Size(246, 23);
+            this.AddLIbrarian_TxtBox.Size = new System.Drawing.Size(281, 27);
             this.AddLIbrarian_TxtBox.TabIndex = 22;
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(50, 62);
+            this.label29.Location = new System.Drawing.Point(57, 83);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(45, 15);
+            this.label29.Size = new System.Drawing.Size(57, 20);
             this.label29.TabIndex = 21;
             this.label29.Text = "Gender";
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(3, 34);
+            this.label30.Location = new System.Drawing.Point(3, 45);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(88, 15);
+            this.label30.Size = new System.Drawing.Size(111, 20);
             this.label30.TabIndex = 20;
             this.label30.Text = "Librarian Name";
             // 
@@ -1646,15 +1619,14 @@
             this.tableLayoutPanel1.Controls.Add(this.UserManag_DGrid, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel5, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(376, 2);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(445, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.UserManag_Grid.SetRowSpan(this.tableLayoutPanel1, 2);
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.241379F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.75862F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(574, 432);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.734406F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 94.26559F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1446, 994);
             this.tableLayoutPanel1.TabIndex = 26;
             // 
             // UserManag_DGrid
@@ -1679,7 +1651,8 @@
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.UserManag_DGrid.DefaultCellStyle = dataGridViewCellStyle11;
             this.UserManag_DGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UserManag_DGrid.Location = new System.Drawing.Point(3, 34);
+            this.UserManag_DGrid.Location = new System.Drawing.Point(3, 61);
+            this.UserManag_DGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.UserManag_DGrid.Name = "UserManag_DGrid";
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
@@ -1691,7 +1664,7 @@
             this.UserManag_DGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.UserManag_DGrid.RowHeadersWidth = 51;
             this.UserManag_DGrid.RowTemplate.Height = 25;
-            this.UserManag_DGrid.Size = new System.Drawing.Size(568, 395);
+            this.UserManag_DGrid.Size = new System.Drawing.Size(1440, 929);
             this.UserManag_DGrid.TabIndex = 2;
             this.UserManag_DGrid.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.UserManag_DGrid_CellEnter);
             // 
@@ -1703,10 +1676,9 @@
             this.panel5.Controls.Add(this.UserMng_TxtBox);
             this.panel5.Controls.Add(this.label36);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 2);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel5.Location = new System.Drawing.Point(3, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(568, 27);
+            this.panel5.Size = new System.Drawing.Size(1440, 51);
             this.panel5.TabIndex = 3;
             // 
             // UserMngFilter_Cbox
@@ -1715,39 +1687,36 @@
             this.UserMngFilter_Cbox.Items.AddRange(new object[] {
             "Librarian",
             "User Login"});
-            this.UserMngFilter_Cbox.Location = new System.Drawing.Point(295, 3);
-            this.UserMngFilter_Cbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.UserMngFilter_Cbox.Location = new System.Drawing.Point(337, 4);
             this.UserMngFilter_Cbox.Name = "UserMngFilter_Cbox";
-            this.UserMngFilter_Cbox.Size = new System.Drawing.Size(98, 23);
+            this.UserMngFilter_Cbox.Size = new System.Drawing.Size(111, 28);
             this.UserMngFilter_Cbox.TabIndex = 23;
             this.UserMngFilter_Cbox.Text = "Librarian";
             this.UserMngFilter_Cbox.SelectedIndexChanged += new System.EventHandler(this.UserMngFilter_Cbox_SelectedIndexChanged);
             // 
             // UserMngSearch_Btn
             // 
-            this.UserMngSearch_Btn.Location = new System.Drawing.Point(398, 2);
-            this.UserMngSearch_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.UserMngSearch_Btn.Location = new System.Drawing.Point(455, 3);
             this.UserMngSearch_Btn.Name = "UserMngSearch_Btn";
-            this.UserMngSearch_Btn.Size = new System.Drawing.Size(82, 22);
+            this.UserMngSearch_Btn.Size = new System.Drawing.Size(94, 29);
             this.UserMngSearch_Btn.TabIndex = 22;
             this.UserMngSearch_Btn.Text = "Search";
             this.UserMngSearch_Btn.UseVisualStyleBackColor = true;
             // 
             // UserMng_TxtBox
             // 
-            this.UserMng_TxtBox.Location = new System.Drawing.Point(63, 3);
-            this.UserMng_TxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.UserMng_TxtBox.Location = new System.Drawing.Point(72, 4);
             this.UserMng_TxtBox.Name = "UserMng_TxtBox";
-            this.UserMng_TxtBox.Size = new System.Drawing.Size(227, 23);
+            this.UserMng_TxtBox.Size = new System.Drawing.Size(259, 27);
             this.UserMng_TxtBox.TabIndex = 21;
             this.UserMng_TxtBox.TextChanged += new System.EventHandler(this.UserMng_TxtBox_TextChanged);
             // 
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(11, 5);
+            this.label36.Location = new System.Drawing.Point(13, 7);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(42, 15);
+            this.label36.Size = new System.Drawing.Size(53, 20);
             this.label36.TabIndex = 20;
             this.label36.Text = "Search";
             // 
@@ -1806,23 +1775,14 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // Duration_TxtBox
-            // 
-            this.Duration_TxtBox.FormattingEnabled = true;
-            this.Duration_TxtBox.Location = new System.Drawing.Point(115, 109);
-            this.Duration_TxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Duration_TxtBox.Name = "Duration_TxtBox";
-            this.Duration_TxtBox.Size = new System.Drawing.Size(244, 23);
-            this.Duration_TxtBox.TabIndex = 27;
-            this.Duration_TxtBox.TextChanged += new System.EventHandler(this.Duration_TxtBox_TextChanged);
-            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(961, 464);
+            this.ClientSize = new System.Drawing.Size(1902, 1033);
             this.Controls.Add(this.UCheckIn_DGrid);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -2008,9 +1968,10 @@
         private System.Windows.Forms.TextBox BookLang_TxtBox;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Button BorrReturned_Btn;
-        private System.Windows.Forms.CheckBox Borrowing_CkBox;
         private System.Windows.Forms.ComboBox StatusTxtBox_CBox;
         private System.Windows.Forms.ComboBox AddLiGender_TxtBox;
         private System.Windows.Forms.ComboBox Duration_TxtBox;
+        private System.Windows.Forms.Label Borrow_Filter_Lb;
+        private System.Windows.Forms.ComboBox Borrower_filter_Cbox;
     }
 }

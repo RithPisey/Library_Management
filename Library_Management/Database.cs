@@ -16,7 +16,7 @@ namespace Library_Management
         string connectionState = "";
         public Database()
         {
-            string server = "DESKTOP-R7RKDVR\\SQLEXPRESS";
+            string server = "DESKTOP-TD1L1JK\\SQLEXPRESS";
             string database = "Library_Management";
             string userID = "sa" ;
             string password = "123";
@@ -52,9 +52,10 @@ namespace Library_Management
             //userDataTable.Clear();  
             DataTable table = new DataTable();
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sql, connectionString);
+
             try
             {
-                sqlDataAdapter.Fill(table);
+               sqlDataAdapter.Fill(table);
                 return table;
             }catch(Exception ex)
             {

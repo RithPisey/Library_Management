@@ -39,7 +39,7 @@ namespace Library_Management.MyController
         {
             if (myDatabase.getConnectionState() == "open")
             {
-                DataTable dt = myDatabase.getTable("select Login.Li_ID, Login.Password, Role, Status from Login");
+                DataTable dt = myDatabase.getTable("select Login.Li_ID, Login.Password, Role, Status from Login where Login.Status = 'Active'");
                 if (dt != null)
                 {
                     return dt;
